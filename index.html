@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Knit Socks Rewrite</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <form>
+        <fieldset id="gauge-size">
+            <legend>Gauge and Size Information</legend>
+            <div><label for="gauge">Stitches per inch: </label>
+            <input id="gauge" type="text" value="0"></div>
+
+            <div><label for="circ">Circumference of foot in inches: </label>
+            <input id="circ" type="text" value="0"></div>
+
+            <div><label for="length">Length of foot in inches: </label>
+            <input id="length" type="text" value="0"></div>
+        </fieldset>
+
+        <fieldset id="constr-direction">
+            <legend>Construction Direction</legend>
+            <p>Which direction do you want to knit the socks?</p>
+            <div><input type="radio" id="toeup" name="direction" value="toeup">
+            <label for="toeup">Toe Up</label></div>
+
+            <div><input type="radio" id="cuffdown" name="direction" value="cuffdown">
+            <label for="cuffdown">Cuff Down</label></div>
+
+            <p id="toe-up-short-row" class="hide">Your toe-up sock recipe will include a short-row heel.</p>
+        </fieldset>
+
+        <fieldset id="heel-type" class="hide">
+            <legend>Heel Type</legend>
+            <p>What kind of heel do you want to use?</p>
+            <div><input type="radio" id="flap" name="heeltype" value="flap">
+            <label for="flap">Toe Up</label></div>
+    
+            <div><input type="radio" id="shortrow" name="heeltype" value="shortrow">
+            <label for="shortrow">Cuff Down</label></div>
+
+        </fieldset>
+
+       <div><input type="submit" value="Generate Pattern!" onclick="fillCastOn(); return false"></div>
+
+    </form>
+
+    <p><span class="caston"></span></p>
+</body>
+<script src="scripts.js"></script>
+</html>
