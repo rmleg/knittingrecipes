@@ -1,9 +1,35 @@
 //get the form
 const form = document.querySelector("form");
 
+function getFullStCount() {
+    const gauge = form.querySelector("input#gauge");
+    const circumference = form.querySelector("input#circ");
+    return gauge.value * circumference.value * 0.9;
+}
+
 //function to fill pattern with data from the form
 function fillElt (elt, num) {
     elt.innerHTML = num;
+}
+
+function fillPattern() {
+    fillElt(document.querySelector("span.caston"), getFullStCount());
+}
+
+function showPattern() {
+    const direction = form.querySelector('input[name="direction"]:checked').value;
+    console.log(direction);
+    const cuffDownRecipe = document.querySelector("#cuff-down-recipe");
+    const toeUpRecipe = document.querySelector("#toe-up-recipe")
+    if(direction === "cuffdown") {
+        cuffDownRecipe.classList.remove("hide");
+        toeUpRecipe.classList.add("hide");
+    }
+    else if(direction === "toeup") {
+        toeUpRecipe.classList.remove("hide");
+        cuffDownRecipe.classList.add("hide");
+    }
+    fillPattern();
 }
 
 function handleConstrChange() {
@@ -30,5 +56,15 @@ const radios = form.querySelectorAll("fieldset#constr-direction input");
 radios.forEach(radio => 
     radio.addEventListener("change", handleConstrChange)    
 );
+
+
+//Pattern components
+//cuff
+//leg
+//heel
+//foot
+//toe
+
+
 
 
