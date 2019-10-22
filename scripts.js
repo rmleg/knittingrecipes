@@ -8,8 +8,34 @@ function getFullStCount() {
 }
 
 //function to fill pattern with data from the form
-function fillElt (elt, num) {
+function fillElt(elt, num) {
     elt.innerHTML = num;
+}
+
+function validateForm() {
+    //checks if number inputs are numbers
+    //radio button requirements are handled in the HTML
+    const formInputs = Array.from(form.querySelectorAll('input'));
+    console.log(formInputs);
+    let valid = true;
+    //check if text inputs are valid numbers and are greater than 0
+    formInputs.forEach(input => {
+        if(input.type === 'number') {
+            //number fields are the only ones that take user input
+            //don't need to check other input types
+            if(Number(input.value) === NaN) {
+                //if found an invalid number field, add class, set valid to false
+                input.classList.add('invalid', 'NaN');
+                valid = false;
+            }
+            else if(Number(input.value) <= 0) {
+                //valid numbers are greater than 0
+                input.classList.add('invalid', 'zero');
+                valid = false;
+            }
+        }
+    });
+    return valid;
 }
 
 function fillPattern() {
@@ -17,19 +43,25 @@ function fillPattern() {
 }
 
 function showPattern() {
-    const direction = form.querySelector('input[name="direction"]:checked').value;
-    console.log(direction);
-    const cuffDownRecipe = document.querySelector("#cuff-down-recipe");
-    const toeUpRecipe = document.querySelector("#toe-up-recipe")
-    if(direction === "cuffdown") {
-        cuffDownRecipe.classList.remove("hide");
-        toeUpRecipe.classList.add("hide");
+    if(validateForm()) {
+        const direction = form.querySelector('input[name="direction"]:checked').value;
+        console.log(direction);
+        const cuffDownRecipe = document.querySelector("#cuff-down-recipe");
+        const toeUpRecipe = document.querySelector("#toe-up-recipe")
+        if(direction === "cuffdown") {
+            cuffDownRecipe.classList.remove("hide");
+            toeUpRecipe.classList.add("hide");
+        }
+        else if(direction === "toeup") {
+            toeUpRecipe.classList.remove("hide");
+            cuffDownRecipe.classList.add("hide");
+        }
+        fillPattern();
+        return true;
     }
-    else if(direction === "toeup") {
-        toeUpRecipe.classList.remove("hide");
-        cuffDownRecipe.classList.add("hide");
+    else {
+        return false;
     }
-    fillPattern();
 }
 
 function handleConstrChange() {
