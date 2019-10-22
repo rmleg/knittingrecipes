@@ -2,6 +2,34 @@ const knittingRecipes = function() {
     //get the form
     const form = document.querySelector("form");
 
+    function getMultiple(num, mult) {
+        /*return the largest number smaller than num that
+         *is a multiple of mult
+         */
+        //if mult is already a mult of num, return num
+        if(num % mult === 0) {
+            return num;
+        }
+        else {
+            //round num down to the nearest whole number
+            const numFloor = Math.floor(num);
+            if(numFloor % mult === 0) {
+                //if numFloor is multiple of mult, return numFloor
+                return numFloor;
+            }
+            else {
+                //subtract 1 from numFloor until it is
+                //a multitple of mult. return numFloor
+                for(const i = 1; i < mult; ++i) {
+                    if((numFloor - i) % mult === 0) {
+                        return numFloor - i;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     function getFullStCount() {
         const gauge = form.querySelector("input#gauge");
         const circumference = form.querySelector("input#circ");
@@ -40,13 +68,31 @@ const knittingRecipes = function() {
     }
 
     function fillPattern() {
-        fillElt(document.querySelector("span.caston"), getFullStCount());
+        const fullCircSts = getMultiple(getFullStCount(), 4);
+        fillElt(document.querySelector("span.caston"), fullCircSts);
+        //get heel type
+        const heelType = form.querySelector('input[name="heeltype"]:checked').value;
+        const shortRowInstructions = document.querySelectorAll('.shortRowInstructions');
+        if(heelType === 'flap') {
+            document.querySelector('#flapInstructions').classList.remove('hide');
+            shortRowInstructions.forEach(instr => instr.classList.add('hide'));
+            //document.querySelector('.shortRowInstructions').classList.add('hide');
+            fillElt(document.querySelector('span#leglength'), 6);
+        }
+        else {
+            //document.querySelector('.shortRowInstructions').classList.remove('hide');
+            shortRowInstructions.forEach(instr => instr.classList.remove('hide'));
+            document.querySelector('#flapInstructions').classList.add('hide');
+            fillElt(document.querySelector('span#leglength'), 7);
+        }
+        //fill heel stitch count
+        const heelSpans = document.querySelectorAll('span.heelsts');
+        heelSpans.forEach(heelSpan => fillElt(heelSpan, (fullCircSts / 2)));
     }
 
     function showPattern() {
         if(validateForm()) {
             const direction = form.querySelector('input[name="direction"]:checked').value;
-            console.log(direction);
             const cuffDownRecipe = document.querySelector("#cuff-down-recipe");
             const toeUpRecipe = document.querySelector("#toe-up-recipe")
             if(direction === "cuffdown") {
