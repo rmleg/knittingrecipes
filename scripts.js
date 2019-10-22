@@ -67,10 +67,13 @@ const knittingRecipes = function() {
         return valid;
     }
 
-    function fillPattern() {
-        const fullCircSts = getMultiple(getFullStCount(), 4);
-        fillElt(document.querySelector("span.caston"), fullCircSts);
-        //get heel type
+    function findAndFill(selector, num) {
+        //find selector items, loop through, fillElt with num
+        const locations = document.querySelectorAll(selector);
+        locations.forEach(location => fillElt(location, num));
+    }
+
+    function handleHeelType() {
         const heelType = form.querySelector('input[name="heeltype"]:checked').value;
         const shortRowInstructions = document.querySelectorAll('.shortRowInstructions');
         if(heelType === 'flap') {
@@ -85,9 +88,52 @@ const knittingRecipes = function() {
             document.querySelector('#flapInstructions').classList.add('hide');
             fillElt(document.querySelector('span#leglength'), 7);
         }
-        //fill heel stitch count
-        const heelSpans = document.querySelectorAll('span.heelsts');
-        heelSpans.forEach(heelSpan => fillElt(heelSpan, (fullCircSts / 2)));
+    }
+
+    function fillPattern() {
+        const fullCircSts = getMultiple(getFullStCount(), 4);
+        const spansToFill = [
+            {
+                selector: '.caston',
+                num: fullCircSts
+            },
+            {
+                selector: '.heelsts',
+                num: fullCircSts / 2
+            },
+            {
+                selector: '#heel-flap-repeats',
+                num: (fullCircSts / 4) - 1
+            },
+            {
+                selector: '#heelturnp',
+                num: (fullCircSts / 4) + 2
+            },
+            {
+                selector: '#unwrappedsts',
+                num: getMultiple((fullCircSts / 6), 2)
+            },
+            {
+                selector: '.footlength',
+                num: form.querySelector('input#length').value - 2
+            },
+            {
+                selector: '#toests',
+                num: fullCircSts / 2
+            },
+            {
+                selector: '.finaltoests',
+                num: (fullCircSts / 2) - 8
+            },
+            {
+                selector:'.half-finaltoests',
+                num: getMultiple((((fullCircSts / 2) - 8) / 2), 2)
+            }
+        ];
+        spansToFill.forEach(span => findAndFill(span.selector, span.num));
+        
+        //get heel type
+        handleHeelType();
     }
 
     function showPattern() {

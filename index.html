@@ -82,10 +82,10 @@
                     <p>Row 1 (RS): [k1, sl1 wyib] repeat to end<br />
                         Row 2 (WS): p to last stich, sl1 wyif
                     </p>
-                    <p>Repeat rows 1 and 2 <span id="heelrepeats"></span>{{(saveNeedSts(stsPerIn, circumference, 4) / 8) - 1 | number:0 }} more times, or until flap is length desired, ending after a RS row.</p>
+                    <p>Repeat rows 1 and 2 <span id="heel-flap-repeats"></span> more times, or until flap is length desired, ending after a RS row.</p>
 
                     <h4>Heel Turn</h4>
-                    <p>Row 1 (WS): p<span id="heelturnp"></span>{{(saveNeedSts(stsPerIn, circumference, 4) / 4) + 2}}, p2tog, p1, turn<br />
+                    <p>Row 1 (WS): p<span id="heelturnp"></span>, p2tog, p1, turn<br />
                     Row 2 (RS): sl1 wyib, k5, ssk, k1, turn<br />
                     Row 3 (WS): sl1 wyif, p to one stitch before gap, p2tog, p1, turn<br />
                     Row 4 (RS): sl1 wyib, k to one stitch before gap, ssk, k1, turn</p>
@@ -117,7 +117,7 @@
                        Row 3 (RS): k to stitch before wrapped stitch, w&amp;t<br />
                        Row 4 (WS): p to stitch before wrapped stitch, w&amp;t</p>
 
-                    <p>Repeat rows 3 and 4 until <span id="unwrappedsts"></span>{{saveNeedSts(stsPerIn, circumference, 4) / 6 | floorMult:2 | number:0}} stitches are left unwrapped, ending after a WS row.</p>
+                    <p>Repeat rows 3 and 4 until <span id="unwrappedsts"></span> stitches are left unwrapped, ending after a WS row.</p>
 
                     <h4>Second half of the heel</h4>
                     <p>Row 1 (RS): k to first wrapped stitch, k the wrapped stitch while picking up the wrap, turn<br />
@@ -126,28 +126,28 @@
                     <p>Repeat rows 2 and 3 until all wraps have been picked up, ending with a RS row.  You are now ready to continue in the round to work the rest of the sock.</p>
                     </div>
                     <h3>Foot</h3>
-                    <p>Knit every row until work measures <span id="footlength"></span>{{length - 2}} inches.</p>
+                    <p>Knit every row until work measures <span class="footlength"></span> inches.</p>
 
                     <h3>Toe</h3>
                     <p>Knit to the beginning of the instep stitches, then begin the toe decreases as follows:</p>
                     <p>Row 1, instep/needle 1: k1, ssk, k to last 3 sts of instep, k2tog, k1<br />
                         Row 1, sole/needle 2: k1, ssk, k to last 3 sts of sole, k2tog, k1<br />
                         Row 2: k around</p>
-                    <p>Repeat rows 1 and 2 until you have <span id="toests"></span>{{saveNeedSts(stsPerIn, circumference, 4) / 2 | floorMult:4}} stitches remaining.  Then, repeat row 1 twice more.</p>
-                    <p>At the end of your decreases, you should have <span class="finaltoests"></span>{{(saveNeedSts(stsPerIn, circumference, 4) / 2) - 8 | floorMult:4}} stitches remaining, <span class="half-finaltoests"></span>{{((saveNeedSts(stsPerIn, circumference, 4) / 2) - 8) / 2 | floorMult:2}} on the instep and <span class="half-finaltoests"></span>{{((saveNeedSts(stsPerIn, circumference, 4) / 2) - 8) / 2 | floorMult:2}} on the sole.</p>
+                    <p>Repeat rows 1 and 2 until you have <span id="toests"></span> sts remaining.  Then, repeat row 1 twice more.</p>
+                    <p>At the end of your decreases, you should have <span class="finaltoests"></span> stitches remaining, <span class="half-finaltoests"></span> on the instep and <span class="half-finaltoests"></span> on the sole.</p>
                     <p>Cut the yarn, leaving a tail long enough to graft the toe.  Use the <a href="http://www.knitty.com/ISSUEsummer04/FEATtheresasum04.html" target="_blank">Kitchener stitch</a> to graft the toe closed.</p>
 
                 </div><!---#cuff-down-recipe-->
 
                 <div class="hide" id="toe-up-recipe">
                     <h3>Toe</h3>
-                    <p>Using <a href="http://knitty.com/ISSUEspring06/FEATmagiccaston.html" target="_blank">Judy's Magic Cast On</a>, cast on <span class="finaltoests"></span>{{(saveNeedSts(stsPerIn, circumference, 4) / 2) - 8 | floorMult:4}} stitches.</p>
+                    <p>Using <a href="http://knitty.com/ISSUEspring06/FEATmagiccaston.html" target="_blank">Judy's Magic Cast On</a>, cast on <span class="finaltoests"></span> stitches.</p>
                     <p>Row 1: k1, RLI, k to last stitch of first needle, LLI, k2, RLI, k to last stitch of second needle, LLI, k1<br />
                     Row 2: k around</p>
                     <p>Repeat rows 1 and 2 until you have <span class="caston"></span> stitches.  <em>For a slightly more rounded toe, try repeating the first row twice before starting to repeat both rows.</em></p>
 
                     <h3>Foot</h3>
-                    <p>Knit every row until work measures {{length - 2}} inches.</p>
+                    <p>Knit every row until work measures <span class="footlength"></span> inches.</p>
 
                     <h3>Heel</h3>
                     <div class="hide shortRowInstructions">
@@ -159,7 +159,7 @@
                         Row 3 (RS): k to stitch before wrapped stitch, w&amp;t<br />
                         Row 4 (WS): p to stitch before wrapped stitch, w&amp;t</p>
 
-                        <p>Repeat rows 3 and 4 until {{saveNeedSts(stsPerIn, circumference, 4) / 6 | floorMult:2 | number:0}} stitches are left unwrapped, ending after a WS row.</p>
+                        <p>Repeat rows 3 and 4 until <span id="unwrappedsts"></span> stitches are left unwrapped, ending after a WS row.</p>
 
                         <h4>Second half of the heel</h4>
                         <p>Row 1 (RS): k to first wrapped stitch, k the wrapped stitch while picking up the wrap, turn<br />
@@ -181,7 +181,6 @@
                 </div><!---#toe-up-recipe-->
             </div><!---#recipe-->
 
-    <p><span class="caston"></span></p>
 
 </body>
 <script src="scripts.js"></script>
