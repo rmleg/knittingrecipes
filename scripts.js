@@ -50,16 +50,15 @@ const knittingRecipes = function() {
         //check if text inputs are valid numbers and are greater than 0
         formInputs.forEach(input => {
             if(input.type === 'number') {
+                //reset error message
+                input.nextElementSibling.innerHTML = "";
                 //number fields are the only ones that take user input
                 //don't need to check other input types
-                if(Number(input.value) === NaN) {
+                if(Number(input.value) === NaN || Number(input.value) <= 0) {
                     //if found an invalid number field, add class, set valid to false
-                    input.classList.add('invalid', 'NaN');
-                    valid = false;
-                }
-                else if(Number(input.value) <= 0) {
-                    //valid numbers are greater than 0
-                    input.classList.add('invalid', 'zero');
+                    input.classList.add('invalid');
+                    //set error message
+                    input.nextElementSibling.innerHTML = "Please enter a number greater than 0";
                     valid = false;
                 }
             }
@@ -138,6 +137,7 @@ const knittingRecipes = function() {
 
     function showPattern() {
         if(validateForm()) {
+            document.querySelector('#recipe').classList.remove('hide');
             const direction = form.querySelector('input[name="direction"]:checked').value;
             const cuffDownRecipe = document.querySelector("#cuff-down-recipe");
             const toeUpRecipe = document.querySelector("#toe-up-recipe")
@@ -185,10 +185,4 @@ const knittingRecipes = function() {
     return {
         showPattern: showPattern
     }
-    //Pattern components
-    //cuff
-    //leg
-    //heel
-    //foot
-    //toe
 }();
