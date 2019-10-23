@@ -52,13 +52,15 @@ const knittingRecipes = function() {
             if(input.type === 'number') {
                 //reset error message
                 input.nextElementSibling.innerHTML = "";
+                input.nextElementSibling.classList.remove('alert', 'alert-danger');
                 //number fields are the only ones that take user input
                 //don't need to check other input types
                 if(Number(input.value) === NaN || Number(input.value) <= 0) {
                     //if found an invalid number field, add class, set valid to false
-                    input.classList.add('invalid');
+                    input.classList.add('is-invalid');
                     //set error message
                     input.nextElementSibling.innerHTML = "Please enter a number greater than 0";
+                    input.nextElementSibling.classList.add('invalid-feedback');
                     valid = false;
                 }
             }
