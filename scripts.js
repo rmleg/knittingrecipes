@@ -52,7 +52,8 @@ const knittingRecipes = function() {
             if(input.type === 'number') {
                 //reset error message
                 input.nextElementSibling.innerHTML = "";
-                input.nextElementSibling.classList.remove('alert', 'alert-danger');
+                input.nextElementSibling.classList.remove('invalid-feedback');
+                input.classList.remove('is-invalid');
                 //number fields are the only ones that take user input
                 //don't need to check other input types
                 if(Number(input.value) === NaN || Number(input.value) <= 0) {
