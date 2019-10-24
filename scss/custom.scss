@@ -1,6 +1,10 @@
 // Custom.scss
 // Option A: Include all of Bootstrap
 
+//Custom variables
+$bg-white:  #fefefe;
+$bg-light:  #eee;
+
 //Theme color overrides
 $opera-mauve:     #C687B1;
 $powder-blue:     #B1DDF1;
@@ -8,34 +12,47 @@ $champagne:       #F1DAC4;
 $independence:    #474973;
 $dark-purple:     #161B33;
 
-$primary:           $independence;
-$secondary:         $powder-blue;
+//second color scheme
+$dark-green:    #445C4F;
+$light-bluegray:    #D7DAE5;
+$pale-aqua:     #B9CDDA;
+$robin-egg-blue:    #A6D8D4;
+$dark-sea-green:    #8EAF9D;
+
+$primary:           $dark-green;
+$secondary:         $robin-egg-blue;
 //$success:       $green !default;
-$info:              $champagne;
+$info:              $light-bluegray;
 //$warning:       $yellow !default;
 //$danger:        $red !default;
-$light:             $opera-mauve;
-$dark:              $dark-purple;
+$light:             $pale-aqua;
+$dark:              $dark-sea-green;
 
 //Body overrides
-$body-bg:           $champagne;
-$enable-shadows:    false;
+$body-bg:           $bg-white;
 
 //Font overrides
 $font-family-base:  'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
 @import "../bootstrap/scss/bootstrap";
 
-//Custom variables
-$bg-white:  #fefefe;
-
 $font-family-serif: 'PT Serif', georgia, serif;
+
+::selection {
+    background-color: $light;
+}
 
 .hide {
     display: none;
 }
 
-.container {
+.vertical-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-container {
     background: $bg-white;
     border-top-width: 5px !important;
 }
