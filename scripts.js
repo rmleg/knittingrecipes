@@ -45,7 +45,6 @@ const knittingRecipes = function() {
         //checks if number inputs are numbers
         //radio button requirements are handled in the HTML
         const formInputs = Array.from(form.querySelectorAll('input'));
-        console.log(formInputs);
         let valid = true;
         //check if text inputs are valid numbers and are greater than 0
         formInputs.forEach(input => {
@@ -140,6 +139,8 @@ const knittingRecipes = function() {
 
     function showPattern() {
         if(validateForm()) {
+            const button = form.querySelector('input[type="submit"]');
+            button.value="Update Pattern!";
             document.querySelector('#recipe').classList.remove('hide');
             const direction = form.querySelector('input[name="direction"]:checked').value;
             const cuffDownRecipe = document.querySelector("#cuff-down-recipe");
