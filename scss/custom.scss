@@ -6,13 +6,6 @@ $bg-white:  #fefefe;
 $bg-light:  #eee;
 
 //Theme color overrides
-$opera-mauve:     #C687B1;
-$powder-blue:     #B1DDF1;
-$champagne:       #F1DAC4;
-$independence:    #474973;
-$dark-purple:     #161B33;
-
-//second color scheme
 $dark-green:    #445C4F;
 $light-bluegray:    #D7DAE5;
 $pale-aqua:     #B9CDDA;
@@ -39,7 +32,7 @@ $font-family-base:  'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Rob
 $font-family-serif: 'PT Serif', georgia, serif;
 
 ::selection {
-    background-color: $light;
+    background-color: $light; 
 }
 
 .hide {
@@ -48,7 +41,7 @@ $font-family-serif: 'PT Serif', georgia, serif;
 
 .vertical-center {
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
 }
 
@@ -59,4 +52,16 @@ $font-family-serif: 'PT Serif', georgia, serif;
 
 h1, h2, h3, h4, h5, h6, legend {
     font-family: $font-family-serif;
+}
+
+a {
+    border-bottom: 5px solid $info;
+    line-height: 1.2em;
+    display: inline-block;
+    transition: all 0.15s;
+}
+
+a:hover {
+    border-bottom-color: $secondary;
+    text-decoration: none;
 }

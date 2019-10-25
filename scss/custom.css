@@ -9665,7 +9665,7 @@ h3 {
 
 .vertical-center {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
@@ -9676,6 +9676,18 @@ h3 {
 
 h1, h2, h3, h4, h5, h6, legend {
   font-family: "PT Serif", georgia, serif;
+}
+
+a {
+  border-bottom: 5px solid #D7DAE5;
+  line-height: 1.2em;
+  display: inline-block;
+  transition: all 0.15s;
+}
+
+a:hover {
+  border-bottom-color: #A6D8D4;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=custom.css.map */
