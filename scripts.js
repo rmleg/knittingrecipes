@@ -139,9 +139,13 @@ const knittingRecipes = function() {
 
     function showPattern() {
         if(validateForm()) {
+            //Update button to read "Update Pattern!"
             const button = form.querySelector('input[type="submit"]');
             button.value="Update Pattern!";
-            document.querySelector('#recipe').classList.remove('hide');
+            //Show recipe
+            const recipe = document.querySelector('#recipe');
+            recipe.classList.remove('hide');
+            recipe.scrollIntoView({behavior: "smooth"});
             const direction = form.querySelector('input[name="direction"]:checked').value;
             const cuffDownRecipe = document.querySelector("#cuff-down-recipe");
             const toeUpRecipe = document.querySelector("#toe-up-recipe")
