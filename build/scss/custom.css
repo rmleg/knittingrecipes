@@ -9690,4 +9690,11 @@ a:hover {
   text-decoration: none;
 }
 
+#to-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+}
+
 /*# sourceMappingURL=custom.css.map */
