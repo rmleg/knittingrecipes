@@ -98,24 +98,22 @@ const knittingRecipes = function() {
         locations.forEach(location => fillElt(location, num));
     }
 
-    function handleHeelType() {
+    function handleHeelType(direction) {
         const heelType = form.querySelector('input[name="heeltype"]:checked').value;
         const shortRowInstructions = document.querySelectorAll('.shortRowInstructions');
-        if(heelType === 'flap') {
+        if(heelType === 'flap' && direction === 'cuffdown') {
             document.querySelector('#flapInstructions').classList.remove('hide');
             shortRowInstructions.forEach(instr => instr.classList.add('hide'));
-            //document.querySelector('.shortRowInstructions').classList.add('hide');
             fillElt(document.querySelector('span#leglength'), 6);
         }
         else {
-            //document.querySelector('.shortRowInstructions').classList.remove('hide');
             shortRowInstructions.forEach(instr => instr.classList.remove('hide'));
             document.querySelector('#flapInstructions').classList.add('hide');
             fillElt(document.querySelector('span#leglength'), 7);
         }
     }
 
-    function fillPattern() {
+    function fillPattern(direction) {
         const fullCircSts = getMultiple(getFullStCount(), 4);
         const spansToFill = [
             {
@@ -158,7 +156,7 @@ const knittingRecipes = function() {
         spansToFill.forEach(span => findAndFill(span.selector, span.num));
         
         //get heel type
-        handleHeelType();
+        handleHeelType(direction);
     }
 
     function showPattern() {
@@ -181,7 +179,7 @@ const knittingRecipes = function() {
                 toeUpRecipe.classList.remove("hide");
                 cuffDownRecipe.classList.add("hide");
             }
-            fillPattern();
+            fillPattern(direction);
             return true;
         }
         else {
