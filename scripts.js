@@ -2,6 +2,30 @@ const knittingRecipes = function() {
     //get the form
     const form = document.querySelector("form");
 
+    //get construction direction radio buttons
+    const radios = form.querySelectorAll("fieldset#constr-direction input");
+    //loop through radio buttons, add event listener to each
+    radios.forEach(radio => 
+        radio.addEventListener("change", handleConstrChange)    
+    );
+
+    //add event listener for go to top button
+    window.addEventListener('scroll', handleScrollBtn);
+
+
+    function handleScrollBtn(e) {
+        //get current scroll position:
+        const currentScroll = window.scrollY;
+        const formHeight = form.offsetTop + form.offsetHeight;
+        const toTopButton = document.querySelector('#to-top-btn');
+        if(currentScroll < formHeight) {
+            toTopButton.classList.add('hide');
+        }
+        else {
+            toTopButton.classList.remove('hide');
+        }
+    }
+
     function getMultiple(num, mult) {
         /*return the largest number smaller than num that
          *is a multiple of mult
@@ -183,14 +207,13 @@ const knittingRecipes = function() {
         }
     }
 
-    //get construction direction radio buttons
-    const radios = form.querySelectorAll("fieldset#constr-direction input");
-    //loop through radio buttons, add event listener to each
-    radios.forEach(radio => 
-        radio.addEventListener("change", handleConstrChange)    
-    );
+    //handle scroll to top button
+    function goToTop() {
+        form.scrollIntoView({behavior: "smooth"});
+    }
 
     return {
-        showPattern: showPattern
+        showPattern: showPattern,
+        goToTop: goToTop
     }
 }();
