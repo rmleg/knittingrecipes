@@ -14,7 +14,8 @@
 
 <body>
     <div class="container my-5">
-        <div class="row">
+        <button class="btn btn-info hide" id="to-top-btn" onclick="knittingRecipes.goToTop()" title="Go to top">&uarr; Edit Pattern</button>
+        <div class="row header">
             <div class="col-lg-4 vertical-center">
                 <p class="h1">A perfect fit every time: generate your custom sock recipe below.</p>
                 <p><a href="https://www.ravelry.com/patterns/library/sock-knitters-notebook-pattern-generator" target="_blank">
@@ -93,7 +94,7 @@
             <div id="recipe" class="hide pt-5 mt-5 border-top">
                 <h1 class="mb-5">Your Custom Sock Recipe</h1>
                 <div class="row">
-                <div id="shared-recipe" class="col">
+                <div id="shared-recipe" class="col-lg-4">
                     <p>These instructions are written for the magic loop or two circular needles methods, as they reference the first needle and second needle.  To adapt for dpns, the first needle is dpn one and two and the second needle is dpn three and four.</p>
                     <h3>Abbreviations</h3>
                         <p class="abbrList">
@@ -115,7 +116,7 @@
                         </p>
                 </div><!---#shared-recipe-->
 
-                <div class="hide col-8" id="cuff-down-recipe">
+                <div class="hide col-lg-8" id="cuff-down-recipe">
                     <h3>Cuff and Leg</h3>
                         <p>Cast on <span class="caston"></span> sts loosely or with a stretchy cast-on. Join to work in the rnd, being careful not to twist.</p>
                         <p>Rnd 1: *k2, p2; rep from * to end<br />
@@ -186,47 +187,47 @@
 
                         </div><!---#cuff-down-recipe-->
 
-                        <div class="hide" id="toe-up-recipe">
-                            <h3>Toe</h3>
-                            <p>Using <a href="http://knitty.com/ISSUEspring06/FEATmagiccaston.html" target="_blank">Judy's Magic Cast On</a>, cast on <span class="finaltoests"></span> sts.</p>
-                            <p>Row 1: kfb, k to 2 sts before end of first needle, kfb, k1, kfb, k to 2 sts before end of second needle, kfb, k1<br />
-                            Row 2: k around</p>
-                            <p>Rep rows 1 and 2 until you have <span class="caston"></span> sts.  <em>For a slightly more rounded toe, try repeating the first row twice before starting to repeat both rows.</em></p>
+                <div class="hide col-lg-8" id="toe-up-recipe">
+                    <h3>Toe</h3>
+                    <p>Using <a href="http://knitty.com/ISSUEspring06/FEATmagiccaston.html" target="_blank">Judy's Magic Cast On</a>, cast on <span class="finaltoests"></span> sts.</p>
+                    <p>Row 1: kfb, k to 2 sts before end of first needle, kfb, k1, kfb, k to 2 sts before end of second needle, kfb, k1<br />
+                    Row 2: k around</p>
+                    <p>Rep rows 1 and 2 until you have <span class="caston"></span> sts.  <em>For a slightly more rounded toe, try repeating the first row twice before starting to repeat both rows.</em></p>
 
-                            <h3>Foot</h3>
-                            <p>Knit every row until work measures <span class="footlength"></span> inches.</p>
+                    <h3>Foot</h3>
+                    <p>Knit every row until work measures <span class="footlength"></span> inches.</p>
 
-                            <h3>Heel</h3>
-                            <div class="hide shortRowInstructions">
-                                <p>The short row heel is worked flat over the next <span class="heelsts"></span> sts, which is half your total sts.  References to the first and last sts in these instructions refer to the first of this half and the last of this half of your sts, i.e. the heel sts.</p>
+                    <h3>Heel</h3>
+                    <div class="hide shortRowInstructions">
+                        <p>The short row heel is worked flat over the next <span class="heelsts"></span> sts, which is half your total sts.  References to the first and last sts in these instructions refer to the first of this half and the last of this half of your sts, i.e. the heel sts.</p>
 
-                                <h4>First half of the heel</h4>
-                                <p>Row 1 (RS): k across to last st, w&amp;t<br />
-                                Row 2 (WS): p back to first st, w&amp;t<br />
-                                Row 3 (RS): k to st before wrapped st, w&amp;t<br />
-                                Row 4 (WS): p to st before wrapped st, w&amp;t</p>
+                        <h4>First half of the heel</h4>
+                        <p>Row 1 (RS): k across to last st, w&amp;t<br />
+                        Row 2 (WS): p back to first st, w&amp;t<br />
+                        Row 3 (RS): k to st before wrapped st, w&amp;t<br />
+                        Row 4 (WS): p to st before wrapped st, w&amp;t</p>
 
-                                <p>Rep rows 3 and 4 until <span id="unwrappedsts"></span> sts are left unwrapped, ending after a WS row.</p>
+                        <p>Rep rows 3 and 4 until <span id="unwrappedsts"></span> sts are left unwrapped, ending after a WS row.</p>
 
-                                <h4>Second half of the heel</h4>
-                                <p>Row 1 (RS): k to first wrapped st, k the wrapped st while picking up the wrap, turn<br />
-                                Row 2 (WS): sl1 wyif, p to first/next wrapped st, p the wrapped st while picking up the wrap, turn<br />
-                                Row 3 (RS): sl1 wyib, k to next wrapped st, k the wrapped st while picking up the wrap, turn</p>
-                                <p>Rep rows 2 and 3 until all wraps have been picked up, ending with a RS row.  You are now ready to continue in the rnd to work the rest of the sock.</p>
-                            </div>
+                        <h4>Second half of the heel</h4>
+                        <p>Row 1 (RS): k to first wrapped st, k the wrapped st while picking up the wrap, turn<br />
+                        Row 2 (WS): sl1 wyif, p to first/next wrapped st, p the wrapped st while picking up the wrap, turn<br />
+                        Row 3 (RS): sl1 wyib, k to next wrapped st, k the wrapped st while picking up the wrap, turn</p>
+                        <p>Rep rows 2 and 3 until all wraps have been picked up, ending with a RS row.  You are now ready to continue in the rnd to work the rest of the sock.</p>
+                    </div>
 
-                            <h3>Leg and Cuff</h3>
+                    <h3>Leg and Cuff</h3>
 
-                            <p>Knit every row until work measures 7 inches from the top of the heel, or until desired length.</p>
+                    <p>Knit every row until work measures 7 inches from the top of the heel, or until desired length.</p>
 
-                            <h4>Begin ribbing for the cuff</h4>
-                            <p>Rnd 1: *k2, p2; rep from * to end<br />
-                            Rep rnd 1 until ribbing measures one inch, or until desired length.</p>
+                    <h4>Begin ribbing for the cuff</h4>
+                    <p>Rnd 1: *k2, p2; rep from * to end<br />
+                    Rep rnd 1 until ribbing measures one inch, or until desired length.</p>
 
-                            <p>Bind off using a stretchy bind off, such as the <a href="http://www.knitty.com/ISSUEsummer06/FEATsum06TT.html" target="_blank">sewn bind off</a>, my personal favorite.</p>
+                    <p>Bind off using a stretchy bind off, such as the <a href="http://www.knitty.com/ISSUEsummer06/FEATsum06TT.html" target="_blank">sewn bind off</a>, my personal favorite.</p>
 
-                        </div><!---#toe-up-recipe-->
-                        </div>
+                </div><!---#toe-up-recipe-->
+
             </div><!---#recipe-->
         </div>
         <footer class="border-top pt-5 mt-5">
