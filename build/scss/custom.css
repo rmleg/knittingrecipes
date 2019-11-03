@@ -9659,6 +9659,10 @@ h3 {
   background-color: #B9CDDA;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .hide {
   display: none;
 }
@@ -9684,10 +9688,18 @@ a {
   display: inline-block;
   transition: all 0.15s;
 }
-
 a:hover {
   border-bottom-color: #A6D8D4;
   text-decoration: none;
+}
+
+.header p.h1 a {
+  color: #397F78;
+  display: inline;
+  border-bottom: none;
+}
+.header p.h1 a:hover {
+  text-decoration: underline;
 }
 
 #to-top-btn {

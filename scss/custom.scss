@@ -10,6 +10,7 @@ $dark-green:    #445C4F;
 $light-bluegray:    #D7DAE5;
 $pale-aqua:     #B9CDDA;
 $robin-egg-blue:    #A6D8D4;
+$a11y-robin-egg-blue: #397F78;
 $dark-sea-green:    #8EAF9D;
 
 $primary:           $dark-green;
@@ -63,11 +64,26 @@ a {
     line-height: 1.2em;
     display: inline-block;
     transition: all 0.15s;
+
+    &:hover {
+        border-bottom-color: $secondary;
+        text-decoration: none;
+    }
 }
 
-a:hover {
-    border-bottom-color: $secondary;
-    text-decoration: none;
+
+.header {
+    p.h1 {
+        a {
+            color: $a11y-robin-egg-blue;
+            display: inline;
+            border-bottom: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 #to-top-btn {
