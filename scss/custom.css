@@ -9697,4 +9697,8 @@ a:hover {
   z-index: 99;
 }
 
+.social a {
+  border-bottom: none;
+}
+
 /*# sourceMappingURL=custom.css.map */
