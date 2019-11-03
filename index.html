@@ -30,7 +30,9 @@
         <button class="btn btn-info hide" id="to-top-btn" onclick="knittingRecipes.goToTop()" title="Go to top">&uarr; Edit Pattern</button>
         <div class="row header">
             <div class="col-lg-4 vertical-center">
-                <p class="h1">A perfect fit every time: generate your custom sock recipe below.</p>
+                <p class="h1">A perfect fit every time: generate your custom sock recipe below.
+                    <a href="#sockform" onclick="knittingRecipes.goToTop(); return false;">Get started!</a>
+                </p>
                 <p><a href="https://www.ravelry.com/patterns/library/sock-knitters-notebook-pattern-generator" target="_blank">
                     View on Ravelry &rarr;</a></p>
             </div>
@@ -39,7 +41,7 @@
                 on top of a book on a ledge with a blurred background of trees and a lake." />
             </div>
         </div>
-        <div class="content-container px-5 py-5 mt-5">
+        <div class="content-container px-5 py-5 mt-5" id="sockform">
             <form>
                 <div class="row">
                     <div class="col-md">
@@ -246,6 +248,9 @@
         <footer class="border-top pt-5 mt-5">
             <p>Created by <a href="http://rachelleggett.com" target="_blank">Rachel Leggett</a>. 
                 <span class="social">
+                    <a href="https://ravelry.com/arbortwist" target="_blank" aria-label="Visit my Ravelry profile.">
+                        <span aria-hidden="true" class="mx-1 fab fa-ravelry"></span>
+                    </a> 
                     <a href="https://instagram.com/arbortwist" target="_blank" aria-label="Visit my Instagram.">
                         <span aria-hidden="true" class="mx-1 fab fa-instagram"></span>
                     </a> 

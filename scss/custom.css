@@ -9659,6 +9659,10 @@ h3 {
   background-color: #B9CDDA;
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .hide {
   display: none;
 }

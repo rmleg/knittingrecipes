@@ -35,6 +35,10 @@ $font-family-serif: 'PT Serif', georgia, serif;
     background-color: $light; 
 }
 
+body {
+    scroll-behavior: smooth;
+}
+
 .hide {
     display: none;
 }
