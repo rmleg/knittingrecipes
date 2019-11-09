@@ -108,7 +108,6 @@ const knittingRecipes = function() {
         }
 
         handleConstrChange = (e) => {
-            console.log(e);
         //Function to show or hide heel selector based on construction direction
             //get heel fields
             const heelFields = document.querySelector("fieldset#heel-type");
