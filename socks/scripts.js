@@ -7,7 +7,7 @@ const knittingRecipes = function() {
             window.addEventListener('scroll', this.handleScrollBtn);
         }
 
-        getMultiple(num, mult) {
+        getMultiple = (num, mult) => {
             /*return the largest number smaller than num that
              *is a multiple of mult
              */
@@ -35,10 +35,10 @@ const knittingRecipes = function() {
             return false;
         }
 
-        validateForm() {
+        validateForm = () => {
             //checks if number inputs are numbers
             //radio button requirements are handled in the HTML
-            const formInputs = Array.from(form.querySelectorAll('input'));
+            const formInputs = Array.from(this.form.querySelectorAll('input'));
             let valid = true;
             //check if text inputs are valid numbers and are greater than 0
             formInputs.forEach(input => {
@@ -62,14 +62,14 @@ const knittingRecipes = function() {
             return valid;
         }
 
-        goToTop() {
-            form.scrollIntoView({behavior: "smooth"});
+        goToTop = () => {
+            this.form.scrollIntoView({behavior: "smooth"});
         }
-
-        handleScrollBtn(e) {
+ 
+        handleScrollBtn = () => {
             //get current scroll position:
             const currentScroll = window.scrollY;
-            const formHeight = form.offsetTop + form.offsetHeight;
+            const formHeight = this.form.offsetTop + this.form.offsetHeight;
             const toTopButton = document.querySelector('#to-top-btn');
             if(currentScroll < formHeight) {
                 toTopButton.classList.add('hide');
@@ -80,19 +80,19 @@ const knittingRecipes = function() {
         }
 
         //function to fill pattern with data from the form
-        fillElt(elt, num) {
+        fillElt = (elt, num) => {
             elt.innerHTML = num;
         }
 
-        findAndFill(selector, num) {
+        findAndFill = (selector, num) => {
             //find selector items, loop through, fillElt with num
             const locations = document.querySelectorAll(selector);
             locations.forEach(location => this.fillElt(location, num));
         }
 
-        getFullStCount() {
-            const gauge = form.querySelector("input#gauge");
-            const circumference = form.querySelector("input#circ");
+        getFullStCount = () => {
+            const gauge = this.form.querySelector("input#gauge");
+            const circumference = this.form.querySelector("input#circ");
             return gauge.value * circumference.value * ease;
         }
     
@@ -107,14 +107,15 @@ const knittingRecipes = function() {
             );
         }
 
-        handleConstrChange() {
+        handleConstrChange = (e) => {
+            console.log(e);
         //Function to show or hide heel selector based on construction direction
             //get heel fields
             const heelFields = document.querySelector("fieldset#heel-type");
             //get the note about using a short row heel with a toe up construction
-            const willUseShortRowHeel = form.querySelector("#toe-up-short-row");
+            const willUseShortRowHeel = this.form.querySelector("#toe-up-short-row");
             //if direction is cuff down, show heel choices
-            if (this.value === "cuffdown") {
+            if (e.target.value === "cuffdown") {
                 heelFields.classList.remove("hide");
                 willUseShortRowHeel.classList.add("hide");
             }
@@ -125,8 +126,8 @@ const knittingRecipes = function() {
             }
         }
 
-        handleHeelType(direction) {
-            const heelType = form.querySelector('input[name="heeltype"]:checked').value;
+        handleHeelType = (direction) => {
+            const heelType = this.form.querySelector('input[name="heeltype"]:checked').value;
             const shortRowInstructions = document.querySelectorAll('.shortRowInstructions');
             if(heelType === 'flap' && direction === 'cuffdown') {
                 document.querySelector('#flapInstructions').classList.remove('hide');
@@ -142,7 +143,7 @@ const knittingRecipes = function() {
     }
 
     //get the form
-    const form = document.querySelector("form");
+    //const form = document.querySelector("form");
 
     //for hat, get this value from a form selection
     const ease = 0.9;
@@ -173,7 +174,7 @@ const knittingRecipes = function() {
             },
             {
                 selector: '.footlength',
-                num: form.querySelector('input#length').value - 2
+                num: sockpatt.form.querySelector('input#length').value - 2
             },
             {
                 selector: '#toests',
@@ -197,13 +198,13 @@ const knittingRecipes = function() {
     function showPattern() {
         if(sockpatt.validateForm()) {
             //Update button to read "Update Pattern!"
-            const button = form.querySelector('input[type="submit"]');
+            const button = sockpatt.form.querySelector('input[type="submit"]');
             button.value="Update Pattern!";
             //Show recipe
             const recipe = document.querySelector('#recipe');
             recipe.classList.remove('hide');
             recipe.scrollIntoView({behavior: "smooth"});
-            const direction = form.querySelector('input[name="direction"]:checked').value;
+            const direction = sockpatt.form.querySelector('input[name="direction"]:checked').value;
             const cuffDownRecipe = document.querySelector("#cuff-down-recipe");
             const toeUpRecipe = document.querySelector("#toe-up-recipe")
             if(direction === "cuffdown") {
