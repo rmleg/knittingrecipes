@@ -3,6 +3,7 @@ import React from 'react';
 function ShortRowHeel(props) {
     return (
         <div id="shortRowHeel">
+            <h3>Heel</h3>
             <p>The short row heel is worked flat over the next {props.state.fullStCount / 2} sts, which is half your total sts.  References to the first and last sts in these instructions refer to the first of this half and the last of this half of your sts, i.e. the heel sts.</p>
 
             <h4>First half of the heel</h4>

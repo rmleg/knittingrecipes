@@ -3,6 +3,7 @@ import React from 'react';
 function HeelFlap(props) {
     return(
         <div id="flapInstructions">
+            <h3>Heel</h3>
             <h4>Heel Flap</h4>
             <p>This flap uses a slip-stitch heel stitch.  Feel free to substitute any stitch pattern, as long as the length ends up the same.  One suggestion is the <a href="http://www.haveayarn.ca/stitch/03_2009_stitch_of_the_month.htm" target="_blank" rel="noopener noreferrer">eye of partridge heel stitch</a>.</p>
             <p>The flap is worked flat over the next { props.state.fullStCount / 2 } sts.</p>
