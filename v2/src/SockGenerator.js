@@ -5,6 +5,7 @@ import HeaderText from './HeaderText';
 import SockForm from './SockForm';
 import Recipe from './Recipe';
 import Footer from './Footer';
+import ToTopButton from './ToTopButton';
 
 class SockGenerator extends React.Component {
     constructor() {
@@ -24,6 +25,7 @@ class SockGenerator extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.validateForm = this.validateForm.bind(this);
         this.getMultiple = this.getMultiple.bind(this);
+        this.scrollToForm = this.scrollToForm.bind(this);
     }
 
     handleChange(e) {
@@ -91,12 +93,22 @@ class SockGenerator extends React.Component {
         return false;
     }
 
+    scrollToForm(e) {
+        e.preventDefault();
+        const sockForm = document.querySelector('#sockform');
+        sockForm.scrollIntoView({behavior: 'smooth'});
+        const firstInput = sockForm.querySelector('input:first-of-type');
+        firstInput.focus({preventScroll: true});
+    }
+
     render() {
         return (
             <div className="container my-5">
+                <ToTopButton onClick={this.scrollToForm} />
                 <div className="row header">
                     <HeaderText url="https://www.ravelry.com/patterns/library/sock-knitters-notebook-pattern-generator"
-                        type="sock" />
+                        type="sock"
+                        onClick={this.scrollToForm} />
                     <HeaderImage url={headimage} alt="Photo of a cake of single-ply green yarn 
                         on top of a book on a ledge with a blurred background of trees and a lake." />
                 </div>
