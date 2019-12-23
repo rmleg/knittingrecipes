@@ -4,7 +4,7 @@ import NumberInput from './NumberInput';
 function SockForm(props) {
     return (
         <div className="content-container px-5 py-5 mt-5" id="sockform">
-            <form>
+            <form onSubmit={props.onSubmit}>
                 <div className="row">
                     <div className="col-md">
                         <fieldset id="gauge-size">
@@ -13,7 +13,8 @@ function SockForm(props) {
                                 label='Stitches per inch: ' 
                                 name='stsPerInch' 
                                 step='0.25' 
-                                onChange={props.onChange} 
+                                onChange={props.onChange}
+                                state={props.state}
                             />
 
                             <NumberInput 
@@ -21,6 +22,7 @@ function SockForm(props) {
                                 name='circumference' 
                                 step='0.125' 
                                 onChange={props.onChange} 
+                                state={props.state}
                             />
 
                             <NumberInput 
@@ -28,6 +30,7 @@ function SockForm(props) {
                                 name='footLength' 
                                 step='0.125' 
                                 onChange={props.onChange} 
+                                state={props.state}
                             />
                         </fieldset>
                     </div>
@@ -97,9 +100,9 @@ function SockForm(props) {
 
                         </fieldset> }
 
-                        {/* <div>
-                            <input className="btn btn-info" type="submit" value="Generate Pattern!" onClick="knittingRecipes.showPattern(); return false" />
-                        </div> */}
+                        <div>
+                            <input className="btn btn-info" type="submit" value={props.state.buttonText} />
+                        </div>
                     </div>
                 </div>
             </form>
