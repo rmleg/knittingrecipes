@@ -11,7 +11,9 @@ class SockPattern extends React.Component {
         this.state = {
             stsPerInch: 0,
             circumference: 0,
-            footLength: 0
+            footLength: 0,
+            direction: 'cuffdown',
+            heeltype: 'flap'
         }
         this.handleChange = this.handleChange.bind(this);
     }
@@ -32,10 +34,7 @@ class SockPattern extends React.Component {
                     <HeaderImage url={headimage} alt="Photo of a cake of single-ply green yarn 
                         on top of a book on a ledge with a blurred background of trees and a lake." />
                 </div>
-                <SockForm onChange={this.handleChange}/>
-                {this.state.stsPerInch}
-                {this.state.circumference}
-                {this.state.footLength}
+                <SockForm onChange={this.handleChange} state={this.state}/>}
                 <Footer url="https://unsplash.com/@casalegraphicdesign" photographer="Nick Casale" />
             </div>   
         );
