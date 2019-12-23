@@ -10,7 +10,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0"
+    "react-scripts": "3.3.0",
   },
   "scripts": {
     "build:sass": "node-sass -r --output-style compressed public/scss/custom.scss -o public/scss",
