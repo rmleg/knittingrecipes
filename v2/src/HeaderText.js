@@ -6,7 +6,7 @@ function HeaderText(props) {
             <p className="h1">
                 A perfect fit every time: generate your custom {props.type} recipe below.
             </p>
-            <p><a href={props.url} target="_blank">
+            <p><a href={props.url} target="_blank" rel="noopener noreferrer">
                 View on Ravelry →</a></p>
         </div>
     )
