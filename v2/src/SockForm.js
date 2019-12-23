@@ -60,10 +60,12 @@ function SockForm(props) {
                                     checked={props.state.direction === 'cuffdown'} />
                                 <label className="form-check-label" htmlFor="cuffdown">Cuff Down</label>
                             </div>
-
-                            <p id="toe-up-short-row" className="hide">Your toe-up sock recipe will include a short-row heel.</p>
+                            {/* show short row heel message if direction is toe up */}
+                            {props.state.direction === 'toeup' && 
+                                <p id="toe-up-short-row">Your toe-up sock recipe will include a short-row heel.</p> }
                         </fieldset>
-
+                        {/* only show heel choices if direction is cuff down */}
+                        { props.state.direction === 'cuffdown' && 
                         <fieldset id="heel-type" className="form-group">
                             <legend>Heel Type</legend>
                             <p>What kind of heel do you want to use?</p>
@@ -93,7 +95,7 @@ function SockForm(props) {
                                 <label className="form-check-label" htmlFor="shortrow">Short row heel</label>
                             </div>
 
-                        </fieldset>
+                        </fieldset> }
 
                         {/* <div>
                             <input className="btn btn-info" type="submit" value="Generate Pattern!" onClick="knittingRecipes.showPattern(); return false" />
