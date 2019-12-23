@@ -98,7 +98,6 @@ class SockPattern extends React.Component {
                         on top of a book on a ledge with a blurred background of trees and a lake." />
                 </div>
                 <SockForm onChange={this.handleChange} onSubmit={this.handleSubmit} state={this.state} />
-                <HeelFlap state={this.state} />
                 <Footer url="https://unsplash.com/@casalegraphicdesign" photographer="Nick Casale" />
             </div>   
         );
