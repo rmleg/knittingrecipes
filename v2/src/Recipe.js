@@ -16,11 +16,6 @@ class Recipe extends React.Component {
         recipe.scrollIntoView({behavior: 'smooth'});
     }
 
-    componentDidUpdate() {
-        const recipe = document.querySelector('#recipe');
-        recipe.scrollIntoView({behavior: 'smooth'});
-    }
-
     static getDerivedStateFromProps(props, state) {
         return {
             ...props.state
