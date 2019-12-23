@@ -101,9 +101,7 @@ class SockGenerator extends React.Component {
                         on top of a book on a ledge with a blurred background of trees and a lake." />
                 </div>
 
-                <div id="form-top">
                 <SockForm onChange={this.handleChange} onSubmit={this.handleSubmit} state={this.state} />
-                </div>
                 
                 {this.state.valid &&
                     <Recipe state={this.state} getMultiple={this.getMultiple} />
