@@ -2,7 +2,7 @@ import React from 'react';
 import CuffDownPattern from './CuffDownPattern';
 import ToeUpPattern from './ToeUpPattern';
 
-class SockRecipe extends React.Component {
+class Recipe extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -42,4 +42,4 @@ class SockRecipe extends React.Component {
     }
 }
 
-export default SockRecipe;
+export default Recipe;

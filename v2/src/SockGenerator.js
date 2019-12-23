@@ -3,10 +3,10 @@ import HeaderImage from './HeaderImage';
 import headimage from './sock-head-image.jpg';
 import HeaderText from './HeaderText';
 import SockForm from './SockForm';
-import SockRecipe from './SockRecipe';
+import Recipe from './Recipe';
 import Footer from './Footer';
 
-class SockPattern extends React.Component {
+class SockGenerator extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -100,11 +100,13 @@ class SockPattern extends React.Component {
                     <HeaderImage url={headimage} alt="Photo of a cake of single-ply green yarn 
                         on top of a book on a ledge with a blurred background of trees and a lake." />
                 </div>
-                
+
+                <div id="form-top">
                 <SockForm onChange={this.handleChange} onSubmit={this.handleSubmit} state={this.state} />
+                </div>
                 
                 {this.state.valid &&
-                    <SockRecipe state={this.state} getMultiple={this.getMultiple} />
+                    <Recipe state={this.state} getMultiple={this.getMultiple} />
                 }
                 <Footer url="https://unsplash.com/@casalegraphicdesign" photographer="Nick Casale" />
             </div>   
@@ -112,4 +114,4 @@ class SockPattern extends React.Component {
     }
 }
 
-export default SockPattern;
+export default SockGenerator;

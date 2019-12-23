@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import HatPattern from './HatPattern';
-import SockPattern from './SockPattern';
+import SockGenerator from './SockGenerator';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
@@ -15,7 +15,7 @@ ReactDOM.render(
             <HatPattern />
         </Route>
         <Route path="/socks">
-            <SockPattern />
+            <SockGenerator />
         </Route>
     </Router>, 
     document.getElementById('root')
