@@ -1,11 +1,11 @@
 import React from 'react';
-import HeaderImage from './HeaderImage';
+import HeaderImage from '../HeaderImage';
 import headimage from './sock-head-image.jpg';
-import HeaderText from './HeaderText';
+import HeaderText from '../HeaderText';
 import SockForm from './SockForm';
 import Recipe from './Recipe';
-import Footer from './Footer';
-import ToTopButton from './ToTopButton';
+import Footer from '../Footer';
+import ToTopButton from '../ToTopButton';
 import {throttle} from 'lodash';
 
 class SockGenerator extends React.Component {
@@ -44,7 +44,7 @@ class SockGenerator extends React.Component {
     handleScrollBtn(e) {
         //get current scroll position:
         let currentScroll = window.scrollY;
-        const form = document.querySelector('#sockform');
+        const form = document.querySelector('#sockform form');
         let formHeight = form.offsetTop + form.offsetHeight;
         if(currentScroll < formHeight) {
             this.setState({
@@ -148,12 +148,13 @@ class SockGenerator extends React.Component {
                     <HeaderImage url={headimage} alt="Photo of a cake of single-ply green yarn 
                         on top of a book on a ledge with a blurred background of trees and a lake." />
                 </div>
-
-                <SockForm onChange={this.handleChange} onSubmit={this.handleSubmit} state={this.state} />
-                
-                {this.state.valid &&
-                    <Recipe state={this.state} getMultiple={this.getMultiple} />
-                }
+                <div className="content-container px-5 py-5 mt-5" id="sockform">
+                    <SockForm onChange={this.handleChange} onSubmit={this.handleSubmit} state={this.state} />
+                    
+                    {this.state.valid &&
+                        <Recipe state={this.state} getMultiple={this.getMultiple} />
+                    }
+                </div>
                 <Footer url="https://unsplash.com/@casalegraphicdesign" photographer="Nick Casale" />
             </div>   
         );

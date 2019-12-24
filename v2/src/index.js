@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import HatPattern from './HatPattern';
-import SockGenerator from './SockGenerator';
+import SockGenerator from './SockComponents/SockGenerator';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
