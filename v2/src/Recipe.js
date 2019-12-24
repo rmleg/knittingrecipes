@@ -15,8 +15,6 @@ class Recipe extends React.Component {
     componentDidMount() {
         const recipe = document.querySelector('#recipe');
         recipe.scrollIntoView({behavior: 'smooth'});
-        /* const recipeTitle = recipe.querySelector('h1');
-        recipeTitle.focus({preventScroll: true}); */
     }
 
     static getDerivedStateFromProps(props, state) {
@@ -28,7 +26,7 @@ class Recipe extends React.Component {
     render() {
         return (
             <div id="recipe" className="pt-5 mt-5 border-top">
-                <h1 tabIndex="-1" className="mb-5">Your Custom Sock Recipe</h1>
+                <h1 className="mb-5">Your Custom Sock Recipe</h1>
                 <div className="row">
                     <SockAbbrevs direction={this.state.direction} heeltype={this.state.heeltype} />
                     { this.state.direction === 'cuffdown' &&
