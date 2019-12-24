@@ -68,17 +68,22 @@ class SockGenerator extends React.Component {
     handleSubmit(e) {
         //should show the pattern and change the button text
         //update button text
+        console.log("submitted");
         this.setState({
             submitted: true
         });
         if (this.validateForm()) {
+            console.log('form is valid');
             this.setState(prevState => ({
                 fullStCount: this.getMultiple(prevState.stsPerInch * prevState.circumference * 0.9, 4)
             }));
-            const pattern = document.querySelector('#recipe');
-            if(pattern) {
+            const recipe = document.querySelector('#recipe');
+            if(recipe) {
+                console.log('recipe exists');
                 //this doesn't exist the first time
-                pattern.scrollIntoView({behavior: 'smooth'});
+                recipe.scrollIntoView({behavior: 'smooth'});
+                const recipeTitle = recipe.querySelector('h1');
+                recipeTitle.focus({preventScroll: true});
             }
         }
         e.preventDefault();
