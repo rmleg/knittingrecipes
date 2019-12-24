@@ -1,6 +1,7 @@
 import React from 'react';
 import CuffDownPattern from './CuffDownPattern';
 import ToeUpPattern from './ToeUpPattern';
+import SockAbbrevs from './SockAbbrevs';
 
 class Recipe extends React.Component {
     constructor(props) {
@@ -26,12 +27,15 @@ class Recipe extends React.Component {
         return (
             <div id="recipe" className="pt-5 mt-5 border-top">
                 <h1 className="mb-5">Your Custom Sock Recipe</h1>
-                { this.state.direction === 'cuffdown' &&
-                    <CuffDownPattern state={this.state} getMultiple={this.getMultiple} />
-                }
-                { this.state.direction === 'toeup' &&
-                    <ToeUpPattern state={this.state} getMultiple={this.getMultiple} />
-                }
+                <div className="row">
+                    <SockAbbrevs direction={this.state.direction} heeltype={this.state.heeltype} />
+                    { this.state.direction === 'cuffdown' &&
+                        <CuffDownPattern state={this.state} getMultiple={this.getMultiple} />
+                    }
+                    { this.state.direction === 'toeup' &&
+                        <ToeUpPattern state={this.state} getMultiple={this.getMultiple} />
+                    }
+                </div> 
             </div>
         )
     }
