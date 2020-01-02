@@ -44,7 +44,7 @@ const knittingRecipes = function() {
             else {
                 //subtract 1 from numFloor until it is
                 //a multitple of mult. return numFloor
-                for(const i = 1; i < mult; ++i) {
+                for(let i = 1; i < mult; ++i) {
                     if((numFloor - i) % mult === 0) {
                         return numFloor - i;
                     }
