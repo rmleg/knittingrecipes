@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import HatPattern from './HatPattern';
+import HatPattern from './HatComponents/HatGenerator';
 import SockGenerator from './SockComponents/SockGenerator';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';

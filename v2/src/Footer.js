@@ -22,7 +22,9 @@ function Footer(props) {
                     </a>
                 </span>
             </p>
-            <p>Stock photo by <a href={props.url} target="_blank" rel="noopener noreferrer">{props.photographer}</a> on <a href="http://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</p>
+            {props.url && 
+                <p>Stock photo by <a href={props.url} target="_blank" rel="noopener noreferrer">{props.photographer}</a> on <a href="http://unsplash.com" target="_blank" rel="noopener noreferrer">Unsplash</a>.</p>
+            }
         </footer>
     );
 }
