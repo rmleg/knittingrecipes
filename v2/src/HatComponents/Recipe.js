@@ -37,18 +37,18 @@ class Recipe extends React.Component {
                               or desired height of brim.</p>
                         <p><strong>Designer's Tip:</strong> To be able to fold up the brim for extra warmth, I recommend a height 
                               of at least 4 inches.</p>
-                        <h3>Hat Body {this.state.fittedOrSlouchy}</h3>
+                        <h3>Hat Body</h3>
                         {this.state.fittedOrSlouchy === 'fitted' &&
                         <p>Work in Stockinette stitch until work measures about&nbsp; 
                             { this.state.height < 8 ? 
-                                Math.round((this.state.height - (10/this.state.rowsPerInch)) * 10) :
-                                Math.round((this.state.height - (16/this.state.rowsPerInch)) * 10) } inches from CO edge.</p>
+                                Math.round((Number(this.state.height) - (10/this.state.rowsPerInch)) * 10) / 10 :
+                                Math.round((Number(this.state.height) - (16/this.state.rowsPerInch)) * 10) / 10} inches from CO edge.</p>
                             }
                         {this.state.fittedOrSlouchy === 'slouchy' &&
                         <p>Work in Stockinette stitch until work measures about&nbsp;
                             { this.state.height < 8 ? 
-                                Math.round((this.state.height + 2 - (10/this.state.rowsPerInch)) * 10) :
-                                Math.round((this.state.height + 2 - (16/this.state.rowsPerInch)) * 10)} inches from CO edge.</p>
+                                Math.round((Number(this.state.height) + 2 - (10/this.state.rowsPerInch)) * 10) / 10 :
+                                Math.round((Number(this.state.height) + 2 - (16/this.state.rowsPerInch)) * 10) / 10} inches from CO edge.</p>
                             }
                         {crownSetup > 0 && <div>
                             <h3>Crown Setup</h3>
