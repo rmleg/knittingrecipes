@@ -14,7 +14,9 @@ class HatGenerator extends React.Component {
         super();
         this.state = {
             stsPerInch: 0,
+            rowsPerInch: 0,
             circumference: 0,
+            height: 5.75,
             fittedOrSlouchy: 'fitted',
             buttonText: 'Generate Pattern!',
             submitted: false,
@@ -106,7 +108,7 @@ class HatGenerator extends React.Component {
                     <HatForm onChange={this.handleChange} onSubmit={this.handleSubmit} state={this.state} />
                     
                     {this.state.valid &&
-                        <Recipe />
+                        <Recipe state={this.state} getMultiple={getMultiple} />
                     }
                 </div>
                 <Footer />

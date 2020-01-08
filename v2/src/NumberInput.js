@@ -9,7 +9,7 @@ function NumberInput(props) {
                 type="number" 
                 min="0" 
                 step={props.step} 
-                placeholder="0"
+                placeholder={props.state[props.name]}
                 name={props.name}
                 onChange={props.onChange} />
                 {/* Show error message if form has been submitted but number is not greater than 0 */}
