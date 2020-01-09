@@ -102,7 +102,7 @@ class SockGenerator extends React.Component {
                     <HeaderText url="https://www.ravelry.com/patterns/library/sock-knitters-notebook-pattern-generator"
                         type="sock"
                         onClick={scrollToForm} />
-                    <HeaderImage url={headimage} alt="Photo of a cake of single-ply green yarn 
+                    <HeaderImage colClass="col-lg-8" url={headimage} alt="Photo of a cake of single-ply green yarn 
                         on top of a book on a ledge with a blurred background of trees and a lake." />
                 </div>
                 <div className="content-container px-5 py-5 mt-5" id="sockform">

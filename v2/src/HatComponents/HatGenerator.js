@@ -102,7 +102,7 @@ class HatGenerator extends React.Component {
                     <HeaderText url="https://www.ravelry.com/patterns/library/size-matters-hat"
                         type="hat"
                         onClick={scrollToForm} />
-                    <HeaderImage url={headimage} alt="Photo of a red, blue, yellow, and black beanie knit from handspun yarn." />
+                    <HeaderImage colClass="col-lg-8" url={headimage} alt="Photo of a red, blue, yellow, and black beanie knit from handspun yarn." />
                 </div>
                 <div className="content-container px-5 py-5 mt-5" id="sockform">
                     <HatForm onChange={this.handleChange} onSubmit={this.handleSubmit} state={this.state} />

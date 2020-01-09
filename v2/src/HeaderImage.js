@@ -2,7 +2,7 @@ import React from 'react'
 
 function HeaderImage(props) {
     return (
-        <div className="col-lg-8">
+        <div className={props.colClass}>
             <img src={props.url} 
             alt={props.alt}
             className="img-fluid shadow-lg" />
