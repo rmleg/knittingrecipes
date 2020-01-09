@@ -2,6 +2,16 @@ import React from 'react';
 import NumberInput from '../NumberInput';
 
 function HatForm(props) {
+    const circsByHeight = {
+        "5.75": "13-15",
+        "6.5": "15-16",
+        "7.25": "16-18",
+        "7.75": "18-20",
+        "8.25": "20-22",
+        "9.25": "21-24",
+        "10": "22-24"
+    };
+
     return (
         <form onSubmit={props.onSubmit}>
             <fieldset id="gauge-size">
@@ -40,15 +50,13 @@ function HatForm(props) {
                 </div>
 
                 <NumberInput 
-                    label='Circumference of head in inches: ' 
+                    label={`Circumference of head in inches (common numbers for your size: ${circsByHeight[props.state.height]}): `}
                     name='circumference' 
                     step='0.125' 
                     onChange={props.onChange} 
                     state={props.state}
                 />
-
-                <p>If you are unable to measure the recipient's head, you can&nbsp;
-                     <a href="https://www.woollywormhead.com/sizing" target="_blank" rel="noopener noreferrer">visit this page for example measurements</a>.</p>
+                    
 
                 <div className="form-group">
                     <label htmlFor="fittedOrSlouchy">Fitted or slouchy?</label>
