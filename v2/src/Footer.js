@@ -6,19 +6,19 @@ function Footer(props) {
             <p>Created by <a href="http://rachelleggett.com" target="_blank" rel="noopener noreferrer">Rachel Leggett</a>. 
                 <span className="social">
                     <a href="https://ravelry.com/people/arbortwist" target="_blank" rel="noopener noreferrer" aria-label="Visit my Ravelry profile.">
-                        <span aria-hidden="true" className="mx-1 fab fa-ravelry"></span>
+                        <span aria-hidden="true" className="grow mx-1 fab fa-ravelry"></span>
                     </a> 
                     <a href="https://instagram.com/arbortwist" target="_blank" rel="noopener noreferrer" aria-label="Visit my Instagram.">
-                        <span aria-hidden="true" className="mx-1 fab fa-instagram"></span>
+                        <span aria-hidden="true" className="grow mx-1 fab fa-instagram"></span>
                     </a> 
                     <a href="https://twitter.com/rleggos" target="_blank" rel="noopener noreferrer" aria-label="Visit my Twitter profile.">
-                        <span aria-hidden="true" className="mx-1 fab fa-twitter"></span>
+                        <span aria-hidden="true" className="grow mx-1 fab fa-twitter"></span>
                     </a> 
                     <a href="https://www.linkedin.com/in/rmleg/" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn profile.">
-                        <span aria-hidden="true" className="mx-1 fab fa-linkedin-in"></span>
+                        <span aria-hidden="true" className="grow mx-1 fab fa-linkedin-in"></span>
                     </a> 
                     <a href="https://github.com/rmleg" target="_blank" rel="noopener noreferrer" aria-label="Visit my Github profile.">
-                        <span aria-hidden="true" className="mx-1 fab fa-github"></span>
+                        <span aria-hidden="true" className="grow mx-1 fab fa-github"></span>
                     </a>
                 </span>
             </p>
