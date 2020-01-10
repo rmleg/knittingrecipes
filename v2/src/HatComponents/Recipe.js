@@ -42,14 +42,15 @@ class Recipe extends React.Component {
                         <p>Work in Stockinette stitch until work measures about&nbsp; 
                             { this.state.height < 8 ? 
                                 Math.round((Number(this.state.height) - (10/this.state.rowsPerInch)) * 10) / 10 :
-                                Math.round((Number(this.state.height) - (16/this.state.rowsPerInch)) * 10) / 10} inches from CO edge.</p>
+                                Math.round((Number(this.state.height) - (16/this.state.rowsPerInch)) * 10) / 10} inches from CO edge.*</p>
                             }
                         {this.state.fittedOrSlouchy === 'slouchy' &&
                         <p>Work in Stockinette stitch until work measures about&nbsp;
                             { this.state.height < 8 ? 
                                 Math.round((Number(this.state.height) + 2 - (10/this.state.rowsPerInch)) * 10) / 10 :
-                                Math.round((Number(this.state.height) + 2 - (16/this.state.rowsPerInch)) * 10) / 10} inches from CO edge.</p>
+                                Math.round((Number(this.state.height) + 2 - (16/this.state.rowsPerInch)) * 10) / 10} inches from CO edge.*</p>
                             }
+                        <p>*If you plan to wear your hat with a folded brim, fold your brim and measure from the bottom folded edge instead of the CO edge.</p>
                         {crownSetup > 0 && <div>
                             <h3>Crown Setup</h3>
                             <p>Next rnd: Decrease {crownSetup} sts evenly.</p>
