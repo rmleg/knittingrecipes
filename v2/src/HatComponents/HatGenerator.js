@@ -8,6 +8,7 @@ import HatForm from './HatForm';
 import Recipe from './Recipe';
 import {scrollToForm, getMultiple} from '../Utils.js';
 import {throttle} from 'lodash';
+import Nav from '../Nav';
 
 class HatGenerator extends React.Component {
     constructor () {

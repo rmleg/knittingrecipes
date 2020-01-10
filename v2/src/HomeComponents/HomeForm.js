@@ -17,7 +17,7 @@ function HomeForm(props) {
                 <label htmlFor="projectType"><span className="h1">I want to knit...</span></label>
                 <select id="projectType" 
                     name="projectType" 
-                    className="form-control" 
+                    className="form-control form-control-lg" 
                     onChange={props.onChange}
                     value={props.projectType}>
                 <option value="hat">a hat</option>

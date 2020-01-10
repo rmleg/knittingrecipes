@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function HeaderText(props) {
 
@@ -9,6 +10,7 @@ function HeaderText(props) {
             </p>
             <p><a href={props.url} target="_blank" rel="noopener noreferrer">
                 View on Ravelry →</a></p>
+            <p><Link to="/">Make something else?</Link></p>
         </div>
     )
 }
