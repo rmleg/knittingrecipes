@@ -1,2 +1,3 @@
 .DS_Store
-knitsocks.code-workspace
+*.code-workspace
+node_modules
