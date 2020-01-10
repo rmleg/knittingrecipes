@@ -12,7 +12,7 @@ body.home {
     justify-content: center;
 }
 
-main {
+.home main {
     background-color: #fff;
     opacity: .9;
     padding: 3rem;
