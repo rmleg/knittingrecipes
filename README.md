@@ -2,7 +2,7 @@
 
 This React application allows users to generate custom hat and sock knitting recipes based on their own measurements and construction preferences.
 
-Available at [https://knittingrecipes.com](knittingrecipes.com).
+Available at [knittingrecipes.com](https://knittingrecipes.com).
 
 ## Developing
 Create feature branches checked out from `dev`. Submit pull requests to `dev`.
