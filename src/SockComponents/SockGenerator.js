@@ -8,6 +8,7 @@ import Footer from "../Footer";
 import ToTopButton from "../ToTopButton";
 import { throttle } from "lodash";
 import { scrollToForm, getMultiple } from "../Utils.js";
+import { Helmet } from "react-helmet";
 
 class SockGenerator extends React.Component {
   constructor() {
@@ -101,37 +102,46 @@ class SockGenerator extends React.Component {
 
   render = () => {
     return (
-      <div role="main" className="container my-5">
-        {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
-        <div className="row header">
-          <HeaderText
-            url="https://www.ravelry.com/patterns/library/sock-knitters-notebook-pattern-generator"
-            type="sock"
-            onClick={scrollToForm}
+      <>
+        <Helmet>
+          <title>Sock Recipe | Knitting Recipes</title>
+          <meta
+            name="description"
+            content="Generate a custom sock knitting pattern based on your own unique measurements and gauge."
           />
-          <HeaderImage
-            colClass="col-lg-8"
-            url={headimage}
-            alt="Cake of single-ply green yarn 
+        </Helmet>
+        <div role="main" className="container my-5">
+          {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
+          <div className="row header">
+            <HeaderText
+              url="https://www.ravelry.com/patterns/library/sock-knitters-notebook-pattern-generator"
+              type="sock"
+              onClick={scrollToForm}
+            />
+            <HeaderImage
+              colClass="col-lg-8"
+              url={headimage}
+              alt="Cake of single-ply green yarn 
                         on top of a book on a ledge with a blurred background of trees and a lake."
-          />
-        </div>
-        <div className="content-container px-5 py-5 mt-5" id="sockform">
-          <SockForm
-            onChange={this.handleChange}
-            onSubmit={this.handleSubmit}
-            state={this.state}
-          />
+            />
+          </div>
+          <div className="content-container px-5 py-5 mt-5" id="sockform">
+            <SockForm
+              onChange={this.handleChange}
+              onSubmit={this.handleSubmit}
+              state={this.state}
+            />
 
-          {this.state.valid && (
-            <Recipe state={this.state} getMultiple={getMultiple} />
-          )}
+            {this.state.valid && (
+              <Recipe state={this.state} getMultiple={getMultiple} />
+            )}
+          </div>
+          <Footer
+            url="https://unsplash.com/@casalegraphicdesign"
+            photographer="Nick Casale"
+          />
         </div>
-        <Footer
-          url="https://unsplash.com/@casalegraphicdesign"
-          photographer="Nick Casale"
-        />
-      </div>
+      </>
     );
   };
 }

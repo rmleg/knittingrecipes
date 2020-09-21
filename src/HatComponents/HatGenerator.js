@@ -8,7 +8,7 @@ import HatForm from "./HatForm";
 import Recipe from "./Recipe";
 import { scrollToForm, getMultiple } from "../Utils.js";
 import { throttle } from "lodash";
-import Nav from "../Nav";
+import { Helmet } from "react-helmet";
 
 class HatGenerator extends React.Component {
   constructor() {
@@ -98,33 +98,42 @@ class HatGenerator extends React.Component {
 
   render() {
     return (
-      <div role="main" className="container my-5">
-        {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
-        <div className="row header">
-          <HeaderText
-            url="https://www.ravelry.com/patterns/library/size-matters-hat"
-            type="hat"
-            onClick={scrollToForm}
+      <>
+        <Helmet>
+          <title>Hat Recipe | Knitting Recipes</title>
+          <meta
+            name="description"
+            content="Generate a custom hat knitting pattern based on your own unique measurements and gauge."
           />
-          <HeaderImage
-            colClass="col-lg-8"
-            url={headimage}
-            alt="A red, blue, yellow, and black beanie knit from handspun yarn."
-          />
-        </div>
-        <div className="content-container px-5 py-5 mt-5" id="sockform">
-          <HatForm
-            onChange={this.handleChange}
-            onSubmit={this.handleSubmit}
-            state={this.state}
-          />
+        </Helmet>
+        <div role="main" className="container my-5">
+          {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
+          <div className="row header">
+            <HeaderText
+              url="https://www.ravelry.com/patterns/library/size-matters-hat"
+              type="hat"
+              onClick={scrollToForm}
+            />
+            <HeaderImage
+              colClass="col-lg-8"
+              url={headimage}
+              alt="A red, blue, yellow, and black beanie knit from handspun yarn."
+            />
+          </div>
+          <div className="content-container px-5 py-5 mt-5" id="sockform">
+            <HatForm
+              onChange={this.handleChange}
+              onSubmit={this.handleSubmit}
+              state={this.state}
+            />
 
-          {this.state.valid && (
-            <Recipe state={this.state} getMultiple={getMultiple} />
-          )}
+            {this.state.valid && (
+              <Recipe state={this.state} getMultiple={getMultiple} />
+            )}
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </>
     );
   }
 }
