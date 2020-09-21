@@ -101,7 +101,7 @@ class SockGenerator extends React.Component {
 
   render = () => {
     return (
-      <div className="container my-5">
+      <div role="main" className="container my-5">
         {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
         <div className="row header">
           <HeaderText
