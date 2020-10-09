@@ -110,3 +110,14 @@ a {
 .grow:hover { 
     transform: scale(1.1); 
 }
+
+legend span {
+    margin-top: 0;
+    margin-bottom: $paragraph-margin-bottom;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-lg;
+    color: $body-color;
+    text-align: left;
+}

@@ -35,9 +35,8 @@ function SockForm(props) {
                 </div>
                 <div className="col-md">
                     <fieldset id="constr-direction" className="form-group">
-                        <legend>Construction Direction</legend>
-                        <p>Which direction do you want to knit the socks?</p>
-                        <div className="form-check form-check-inline">
+                        <legend>Construction Direction<br></br><span>Which direction do you want to knit the socks?</span></legend>
+                            <div className="form-check form-check-inline">
                             <input 
                                 className="form-check-input" 
                                 type="radio" 
@@ -69,8 +68,7 @@ function SockForm(props) {
                     {/* only show heel choices if direction is cuff down */}
                     { props.state.direction === 'cuffdown' && 
                     <fieldset id="heel-type" className="form-group">
-                        <legend>Heel Type</legend>
-                        <p>What kind of heel do you want to use?</p>
+                        <legend>Heel Type<br></br><span>What kind of heel do you want to use?</span></legend>
                         <div className="form-check form-check-inline">
                             <input 
                                 className="form-check-input" 
