@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c788d81d.chunk.css",
+    "main.js": "/static/js/main.4c2c3889.chunk.js",
+    "main.js.map": "/static/js/main.4c2c3889.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ccdc9b21.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ccdc9b21.js.map",
+    "static/js/2.f106efdf.chunk.js": "/static/js/2.f106efdf.chunk.js",
+    "static/js/2.f106efdf.chunk.js.map": "/static/js/2.f106efdf.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.129ead5243f4da71234bb2094696c77d.js": "/precache-manifest.129ead5243f4da71234bb2094696c77d.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.c788d81d.chunk.css.map": "/static/css/main.c788d81d.chunk.css.map",
+    "static/js/2.f106efdf.chunk.js.LICENSE.txt": "/static/js/2.f106efdf.chunk.js.LICENSE.txt",
+    "static/media/hat-head-image.jpg": "/static/media/hat-head-image.26ee697d.jpg",
+    "static/media/Home.css": "/static/media/homepage-yarn-bowl.c9bf9e79.jpg",
+    "static/media/sock-head-image.jpg": "/static/media/sock-head-image.b80b055a.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ccdc9b21.js",
+    "static/js/2.f106efdf.chunk.js",
+    "static/css/main.c788d81d.chunk.css",
+    "static/js/main.4c2c3889.chunk.js"
+  ]
+}

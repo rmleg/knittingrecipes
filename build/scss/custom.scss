@@ -1,0 +1,123 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+//Custom variables
+$bg-white:  #fefefe;
+$bg-light:  #eee;
+
+//Theme color overrides
+$dark-green:    #445C4F;
+$light-bluegray:    #D7DAE5;
+$pale-aqua:     #B9CDDA;
+$robin-egg-blue:    #A6D8D4;
+$a11y-robin-egg-blue: #397F78;
+$dark-sea-green:    #8EAF9D;
+
+$primary:           $dark-green;
+$secondary:         $robin-egg-blue;
+//$success:       $green !default;
+$info:              $light-bluegray;
+//$warning:       $yellow !default;
+//$danger:        $red !default;
+$light:             $pale-aqua;
+$dark:              $dark-sea-green;
+
+//Body overrides
+$body-bg:           $bg-white;
+
+//Font overrides
+$font-family-base:  'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+@import "../bootstrap/scss/bootstrap";
+
+$font-family-serif: 'PT Serif', georgia, serif;
+
+::selection {
+    background-color: $light; 
+}
+
+body {
+    scroll-behavior: smooth;
+}
+
+.hide {
+    display: none;
+}
+
+.vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-container {
+    background: $bg-white;
+    border-top-width: 5px !important;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+    font-family: $font-family-serif;
+}
+
+a {
+    border-bottom: 5px solid $info;
+    line-height: 1.2em;
+    display: inline-block;
+    transition: all 0.15s;
+
+    &:hover {
+        border-bottom-color: $secondary;
+        text-decoration: none;
+    }
+}
+
+
+.header {
+    p.h1 {
+        a {
+            color: $a11y-robin-egg-blue;
+            display: inline;
+            border-bottom: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.invalid-feedback {
+    display: inline;
+}
+
+#to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+}
+
+.social {
+    a {
+        border-bottom: none;
+    }
+}
+
+.grow { 
+    transition: all .2s ease-in-out; 
+}
+
+.grow:hover { 
+    transform: scale(1.1); 
+}
+
+legend span {
+    margin-top: 0;
+    margin-bottom: $paragraph-margin-bottom;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-normal;
+    line-height: $line-height-lg;
+    color: $body-color;
+    text-align: left;
+}
