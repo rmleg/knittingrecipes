@@ -104,7 +104,7 @@ class SockGenerator extends React.Component {
     return (
       <>
         <Helmet>
-          <title>Sock Recipe | Knitting Recipes</title>
+          <title>Sock Pattern Generator | Knitting Recipes</title>
           <meta
             name="description"
             content="Generate a custom sock knitting pattern based on your own unique measurements and gauge."
