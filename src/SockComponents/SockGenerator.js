@@ -110,7 +110,7 @@ class SockGenerator extends React.Component {
             content="Generate a custom sock knitting pattern based on your own unique measurements and gauge."
           />
         </Helmet>
-        <div role="main" className="container my-5">
+        <main className="container my-5">
           {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
           <div className="row header">
             <HeaderText
@@ -136,11 +136,11 @@ class SockGenerator extends React.Component {
               <Recipe state={this.state} getMultiple={getMultiple} />
             )}
           </div>
-          <Footer
-            url="https://unsplash.com/@casalegraphicdesign"
-            photographer="Nick Casale"
-          />
-        </div>
+        </main>
+        <Footer
+          url="https://unsplash.com/@casalegraphicdesign"
+          photographer="Nick Casale"
+        />
       </>
     );
   };

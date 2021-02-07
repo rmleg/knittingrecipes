@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer(props) {
   return (
-    <footer className="border-top pt-5 mt-5">
+    <footer className="container border-top pt-5 mt-5">
       <p>
         Created by{" "}
         <a

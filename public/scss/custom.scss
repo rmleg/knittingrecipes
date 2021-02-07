@@ -82,16 +82,10 @@ a {
 }
 
 .header {
-  p.h1 {
-    a {
-      color: $robin-egg-blue-dark;
-      display: inline;
-      border-bottom: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  h1 a {
+    color: $robin-egg-blue-dark;
+    display: inline;
+    border-bottom: none;
   }
 }
 
