@@ -1,13 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function HeaderImage(props) {
-    return (
-        <div className={props.colClass}>
-            <img src={props.url} 
-            alt={props.alt}
-            className="img-fluid shadow-lg" />
-        </div>
-    )
+function HeaderImage({ colClass, url, alt }) {
+  return (
+    <div className={colClass}>
+      <img src={url} alt={alt} className="img-fluid shadow-lg" />
+    </div>
+  );
 }
 
-export default HeaderImage
+export default HeaderImage;
