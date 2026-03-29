@@ -2,7 +2,7 @@ import React from "react";
 import "./Home.css";
 import Footer from "../Footer";
 import HomeForm from "./HomeForm";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 class Home extends React.Component {
   constructor() {

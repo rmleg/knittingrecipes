@@ -8,7 +8,7 @@ import Footer from "../Footer";
 import ToTopButton from "../ToTopButton";
 import { throttle } from "lodash";
 import { scrollToForm, getMultiple } from "../Utils.js";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 class SockGenerator extends React.Component {
   constructor() {
