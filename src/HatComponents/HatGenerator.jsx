@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HeaderImage from "../HeaderImage";
 import headimage from "./hat-head-image.jpg";
 import HeaderText from "../HeaderText";
@@ -9,136 +9,103 @@ import Recipe from "./Recipe";
 import { scrollToForm, getMultiple } from "../Utils.js";
 import { throttle } from "lodash";
 
-class HatGenerator extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      stsPerInch: 0,
-      rowsPerInch: 0,
-      circumference: 0,
-      height: 5.75,
-      fittedOrSlouchy: "fitted",
-      buttonText: "Generate Pattern!",
-      submitted: false,
-      valid: false,
-      fullStCount: 0,
-      toTopButton: false,
-    };
-    this.handleScrollBtnThrottled = throttle(this.handleScrollBtn, 100);
-  }
+function HatGenerator() {
+  const [stsPerInch, setStsPerInch] = useState(0);
+  const [rowsPerInch, setRowsPerInch] = useState(0);
+  const [circumference, setCircumference] = useState(0);
+  const [height, setHeight] = useState(5.75);
+  const [fittedOrSlouchy, setFittedOrSlouchy] = useState("fitted");
+  const [buttonText, setButtonText] = useState("Generate Pattern!");
+  const [submitted, setSubmitted] = useState(false);
+  const [valid, setValid] = useState(false);
+  const [fullStCount, setFullStCount] = useState(0);
+  const [toTopButton, setToTopButton] = useState(false);
 
-  componentDidMount = () => {
-    window.addEventListener("scroll", this.handleScrollBtnThrottled);
+  const setters = {
+    stsPerInch: setStsPerInch,
+    rowsPerInch: setRowsPerInch,
+    circumference: setCircumference,
+    height: setHeight,
+    fittedOrSlouchy: setFittedOrSlouchy,
   };
 
-  componentWillUnmount = () => {
-    window.removeEventListener("scroll", this.handleScrollBtnThrottled);
-  };
+  useEffect(() => {
+    const throttled = throttle(() => {
+      const form = document.querySelector("form");
+      const formHeight = form.offsetTop + form.offsetHeight;
+      setToTopButton(window.scrollY >= formHeight);
+    }, 100);
+    window.addEventListener("scroll", throttled);
+    return () => window.removeEventListener("scroll", throttled);
+  }, []);
 
-  handleScrollBtn = (e) => {
-    //get current scroll position:
-    let currentScroll = window.scrollY;
-    const form = document.querySelector("form");
-    let formHeight = form.offsetTop + form.offsetHeight;
-    if (currentScroll < formHeight) {
-      this.setState({
-        toTopButton: false,
-      });
-    } else {
-      this.setState({
-        toTopButton: true,
-      });
-    }
-  };
-
-  handleChange = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    this.setState({
-      [name]: value,
-    });
+    setters[name](value);
   };
 
-  handleSubmit = (e) => {
-    //should show the pattern and change the button text
-    //update button text
-    this.setState({
-      submitted: true,
-    });
-    if (this.validateForm()) {
-      this.setState((prevState) => ({
-        fullStCount: getMultiple(
-          prevState.stsPerInch * prevState.circumference * 0.9,
-          4
-        ),
-      }));
-      const pattern = document.querySelector("#recipe");
-      if (pattern) {
-        //this doesn't exist the first time
-        pattern.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-    e.preventDefault();
-  };
-
-  validateForm = () => {
-    if (this.state.stsPerInch > 0 && this.state.circumference > 0) {
-      this.setState({
-        buttonText: "Update Pattern!",
-        valid: true,
-      });
+  const validateForm = () => {
+    if (stsPerInch > 0 && circumference > 0) {
+      setButtonText("Update Pattern!");
+      setValid(true);
       return true;
-    } else {
-      this.setState({
-        valid: false,
-      });
-      return false;
+    }
+    setValid(false);
+    return false;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    if (validateForm()) {
+      setFullStCount(getMultiple(stsPerInch * circumference * 0.9, 4));
+      const pattern = document.querySelector("#recipe");
+      if (pattern) pattern.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  render() {
-    return (
-      <>
-        <title>Hat Recipe | Knitting Recipes</title>
-        <meta
-          name="description"
-          content="Generate a custom hat knitting pattern based on your own unique measurements and gauge."
-        />
-        <main className="container my-5">
-          {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
-          <div className="row header">
-            <HeaderText
-              url="https://www.ravelry.com/patterns/library/size-matters-hat"
-              type="hat"
-              onClick={scrollToForm}
-            />
-            <HeaderImage
-              colClass="col-lg-8"
-              url={headimage}
-              alt="A red, blue, yellow, and black beanie knit from handspun yarn."
-            />
-          </div>
-          <div className="content-container px-5 py-5 mt-5" id="sockform">
-            <HatForm
-              onChange={this.handleChange}
-              onSubmit={this.handleSubmit}
-              state={this.state}
-            />
+  return (
+    <>
+      <title>Hat Recipe | Knitting Recipes</title>
+      <meta
+        name="description"
+        content="Generate a custom hat knitting pattern based on your own unique measurements and gauge."
+      />
+      <main className="container my-5">
+        {toTopButton && <ToTopButton onClick={scrollToForm} />}
+        <div className="row header">
+          <HeaderText
+            url="https://www.ravelry.com/patterns/library/size-matters-hat"
+            type="hat"
+            onClick={scrollToForm}
+          />
+          <HeaderImage
+            colClass="col-lg-8"
+            url={headimage}
+            alt="A red, blue, yellow, and black beanie knit from handspun yarn."
+          />
+        </div>
+        <div className="content-container px-5 py-5 mt-5" id="sockform">
+          <HatForm
+            onChange={handleChange}
+            onSubmit={handleSubmit}
+            state={{ stsPerInch, rowsPerInch, circumference, height, fittedOrSlouchy, buttonText, submitted, valid, fullStCount, toTopButton }}
+          />
 
-            {this.state.valid && (
-              <Recipe
-                fullStCount={this.state.fullStCount}
-                fittedOrSlouchy={this.state.fittedOrSlouchy}
-                height={this.state.height}
-                rowsPerInch={this.state.rowsPerInch}
-                getMultiple={getMultiple}
-              />
-            )}
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
-  }
+          {valid && (
+            <Recipe
+              fullStCount={fullStCount}
+              fittedOrSlouchy={fittedOrSlouchy}
+              height={height}
+              rowsPerInch={rowsPerInch}
+              getMultiple={getMultiple}
+            />
+          )}
+        </div>
+      </main>
+      <Footer />
+    </>
+  );
 }
 
 export default HatGenerator;
