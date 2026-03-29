@@ -1,12 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
 import HatPattern from './HatComponents/HatGenerator';
 import SockGenerator from './SockComponents/SockGenerator';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+root.render(
     <Router>
         <Route exact path='/'>
             <App />
@@ -17,8 +18,7 @@ ReactDOM.render(
         <Route path="/socks">
             <SockGenerator />
         </Route>
-    </Router>, 
-    document.getElementById('root')
+    </Router>
 );
 
 // If you want your app to work offline and load faster, you can change

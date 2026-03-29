@@ -8,7 +8,6 @@ import Footer from "../Footer";
 import ToTopButton from "../ToTopButton";
 import { throttle } from "lodash";
 import { scrollToForm, getMultiple } from "../Utils.js";
-import { Helmet } from "react-helmet";
 
 class SockGenerator extends React.Component {
   constructor() {
@@ -103,13 +102,11 @@ class SockGenerator extends React.Component {
   render = () => {
     return (
       <>
-        <Helmet>
-          <title>Sock Recipe | Knitting Recipes</title>
-          <meta
-            name="description"
-            content="Generate a custom sock knitting pattern based on your own unique measurements and gauge."
-          />
-        </Helmet>
+        <title>Sock Recipe | Knitting Recipes</title>
+        <meta
+          name="description"
+          content="Generate a custom sock knitting pattern based on your own unique measurements and gauge."
+        />
         <main className="container my-5">
           {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
           <div className="row header">

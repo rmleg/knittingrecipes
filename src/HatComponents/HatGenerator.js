@@ -8,7 +8,6 @@ import HatForm from "./HatForm";
 import Recipe from "./Recipe";
 import { scrollToForm, getMultiple } from "../Utils.js";
 import { throttle } from "lodash";
-import { Helmet } from "react-helmet";
 
 class HatGenerator extends React.Component {
   constructor() {
@@ -99,13 +98,11 @@ class HatGenerator extends React.Component {
   render() {
     return (
       <>
-        <Helmet>
-          <title>Hat Recipe | Knitting Recipes</title>
-          <meta
-            name="description"
-            content="Generate a custom hat knitting pattern based on your own unique measurements and gauge."
-          />
-        </Helmet>
+        <title>Hat Recipe | Knitting Recipes</title>
+        <meta
+          name="description"
+          content="Generate a custom hat knitting pattern based on your own unique measurements and gauge."
+        />
         <main className="container my-5">
           {this.state.toTopButton && <ToTopButton onClick={scrollToForm} />}
           <div className="row header">
