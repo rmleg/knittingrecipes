@@ -2,7 +2,6 @@ import React from "react";
 import "./Home.css";
 import Footer from "../Footer";
 import HomeForm from "./HomeForm";
-import { Helmet } from "react-helmet-async";
 
 class Home extends React.Component {
   constructor() {
@@ -31,15 +30,13 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        <Helmet>
-          <title>
-            Knitting Recipes | Knitting pattern generator for hats and socks
-          </title>
-          <meta
-            name="description"
-            content="Generate custom knitting patterns based on your own unique measurements and gauge."
-          />
-        </Helmet>
+        <title>
+          Knitting Recipes | Knitting pattern generator for hats and socks
+        </title>
+        <meta
+          name="description"
+          content="Generate custom knitting patterns based on your own unique measurements and gauge."
+        />
         <div className="container home">
           <main>
             <HomeForm
