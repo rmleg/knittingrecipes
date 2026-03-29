@@ -13,7 +13,8 @@ function SockForm(props) {
                             name='stsPerInch' 
                             step='0.25' 
                             onChange={props.onChange}
-                            state={props.state}
+                            value={props.stsPerInch}
+                            submitted={props.submitted}
                         />
 
                         <NumberInput 
@@ -21,7 +22,8 @@ function SockForm(props) {
                             name='circumference' 
                             step='0.125' 
                             onChange={props.onChange} 
-                            state={props.state}
+                            value={props.circumference}
+                            submitted={props.submitted}
                         />
 
                         <NumberInput 
@@ -29,7 +31,8 @@ function SockForm(props) {
                             name='footLength' 
                             step='0.125' 
                             onChange={props.onChange} 
-                            state={props.state}
+                            value={props.footLength}
+                            submitted={props.submitted}
                         />
                     </fieldset>
                 </div>
@@ -45,7 +48,7 @@ function SockForm(props) {
                                 value="toeup"
                                 onChange={props.onChange} 
                                 required 
-                                checked={props.state.direction === 'toeup'} />
+                                checked={props.direction === 'toeup'} />
                             <label className="form-check-label" htmlFor="toeup">Toe Up</label>
                         </div>
 
@@ -58,15 +61,15 @@ function SockForm(props) {
                                 value="cuffdown" 
                                 onChange={props.onChange}
                                 required 
-                                checked={props.state.direction === 'cuffdown'} />
+                                checked={props.direction === 'cuffdown'} />
                             <label className="form-check-label" htmlFor="cuffdown">Cuff Down</label>
                         </div>
                         {/* show short row heel message if direction is toe up */}
-                        {props.state.direction === 'toeup' && 
+                        {props.direction === 'toeup' && 
                             <p id="toe-up-short-row">Your toe-up sock recipe will include a short-row heel.</p> }
                     </fieldset>
                     {/* only show heel choices if direction is cuff down */}
-                    { props.state.direction === 'cuffdown' && 
+                    { props.direction === 'cuffdown' && 
                     <fieldset id="heel-type" className="form-group">
                         <legend>Heel Type<br /><span>What kind of heel do you want to use?</span></legend>
                         <div className="form-check form-check-inline">
@@ -78,7 +81,7 @@ function SockForm(props) {
                                 value="flap" 
                                 onChange={props.onChange}
                                 required 
-                                checked={props.state.heeltype === 'flap'} />
+                                checked={props.heeltype === 'flap'} />
                             <label className="form-check-label" htmlFor="flap">Heel flap with gusset</label>
                         </div>
                 
@@ -91,14 +94,14 @@ function SockForm(props) {
                                 value="shortrow" 
                                 onChange={props.onChange}
                                 required 
-                                checked={props.state.heeltype === 'shortrow'} />
+                                checked={props.heeltype === 'shortrow'} />
                             <label className="form-check-label" htmlFor="shortrow">Short row heel</label>
                         </div>
 
                     </fieldset> }
 
                     <div>
-                        <input className="btn btn-info" type="submit" value={props.state.buttonText} />
+                        <input className="btn btn-info" type="submit" value={props.buttonText} />
                     </div>
                 </div>
             </div>
