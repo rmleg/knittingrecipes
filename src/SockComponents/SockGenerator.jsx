@@ -90,7 +90,13 @@ function SockGenerator() {
           <SockForm
             onChange={handleChange}
             onSubmit={handleSubmit}
-            state={{ stsPerInch, circumference, footLength, direction, heeltype, buttonText, submitted, valid, fullStCount, toTopButton }}
+            stsPerInch={stsPerInch}
+            circumference={circumference}
+            footLength={footLength}
+            direction={direction}
+            heeltype={heeltype}
+            buttonText={buttonText}
+            submitted={submitted}
           />
 
           {valid && (
