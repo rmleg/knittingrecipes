@@ -6,7 +6,7 @@ function ShortRowHeel(props) {
       <h3>Heel</h3>
       <p>
         The short row heel is worked flat over the next{" "}
-        {props.state.fullStCount / 2} sts, which are half your total sts.
+        {props.fullStCount / 2} sts, which are half your total sts.
         References to the first and last sts in these instructions refer to the
         first of this half and the last of this half of your sts, i.e. the heel
         sts.
@@ -25,7 +25,7 @@ function ShortRowHeel(props) {
 
       <p>
         Rep rows 3 and 4 until{" "}
-        {props.getMultiple(props.state.fullStCount / 6, 2)} sts are left
+        {props.getMultiple(props.fullStCount / 6, 2)} sts are left
         unwrapped, ending after a WS row.
       </p>
 

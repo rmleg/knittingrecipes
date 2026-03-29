@@ -5,7 +5,7 @@ function CuffDownCuff(props) {
     <div>
       <h3>Cuff and Leg</h3>
       <p>
-        Cast on {props.state.fullStCount} sts loosely or with a stretchy
+        Cast on {props.fullStCount} sts loosely or with a stretchy
         cast-on. Join to work in the rnd, being careful not to twist.
       </p>
       <p>

@@ -125,7 +125,13 @@ class HatGenerator extends React.Component {
             />
 
             {this.state.valid && (
-              <Recipe state={this.state} getMultiple={getMultiple} />
+              <Recipe
+                fullStCount={this.state.fullStCount}
+                fittedOrSlouchy={this.state.fittedOrSlouchy}
+                height={this.state.height}
+                rowsPerInch={this.state.rowsPerInch}
+                getMultiple={getMultiple}
+              />
             )}
           </div>
         </main>
