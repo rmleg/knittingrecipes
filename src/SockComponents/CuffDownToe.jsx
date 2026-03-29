@@ -16,14 +16,14 @@ function CuffDownToe(props) {
         Rnd 2: k around
       </p>
       <p>
-        Rep rnds 1 and 2 until you have {props.state.fullStCount / 2} sts
+        Rep rnds 1 and 2 until you have {props.fullStCount / 2} sts
         remaining. Then, rep rnd 1 twice more.
       </p>
       <p>
         At the end of your decreases, you should have{" "}
-        {props.state.fullStCount / 2 - 8} sts remaining,{" "}
-        {props.getMultiple((props.state.fullStCount / 2 - 8) / 2, 2)} on the
-        instep and {props.getMultiple((props.state.fullStCount / 2 - 8) / 2, 2)}{" "}
+        {props.fullStCount / 2 - 8} sts remaining,{" "}
+        {props.getMultiple((props.fullStCount / 2 - 8) / 2, 2)} on the
+        instep and {props.getMultiple((props.fullStCount / 2 - 8) / 2, 2)}{" "}
         on the sole.
       </p>
       <p>

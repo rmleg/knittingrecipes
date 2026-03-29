@@ -19,7 +19,7 @@ function HeelFlap(props) {
         .
       </p>
       <p>
-        The flap is worked flat over the next {props.state.fullStCount / 2} sts.
+        The flap is worked flat over the next {props.fullStCount / 2} sts.
       </p>
       <p>
         Row 1 (RS): *k1, sl1 wyib; rep from * to end
@@ -27,13 +27,13 @@ function HeelFlap(props) {
         Row 2 (WS): p to last stich, sl1 wyif
       </p>
       <p>
-        Rep rows 1 and 2 {props.state.fullStCount / 4 - 1} more times, or until
+        Rep rows 1 and 2 {props.fullStCount / 4 - 1} more times, or until
         flap is length desired, ending after a RS row.
       </p>
 
       <h4>Heel Turn</h4>
       <p>
-        Row 1 (WS): p{props.state.fullStCount / 4 + 2}, p2tog, p1, turn
+        Row 1 (WS): p{props.fullStCount / 4 + 2}, p2tog, p1, turn
         <br />
         Row 2 (RS): sl1 wyib, k5, ssk, k1, turn
         <br />
@@ -80,7 +80,7 @@ function HeelFlap(props) {
       </p>
       <p>
         Rep rnds 1 and 2 until the st count has returned to{" "}
-        {props.state.fullStCount}.
+        {props.fullStCount}.
       </p>
       <p>
         Be sure to stay aware of which half of the sts is your instep and which

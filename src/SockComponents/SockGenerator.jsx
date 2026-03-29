@@ -130,7 +130,13 @@ class SockGenerator extends React.Component {
             />
 
             {this.state.valid && (
-              <Recipe state={this.state} getMultiple={getMultiple} />
+              <Recipe
+                direction={this.state.direction}
+                heeltype={this.state.heeltype}
+                fullStCount={this.state.fullStCount}
+                footLength={this.state.footLength}
+                getMultiple={getMultiple}
+              />
             )}
           </div>
         </main>
