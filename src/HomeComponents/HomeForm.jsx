@@ -1,12 +1,12 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function HomeForm(props) {
-  let history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push(`/${props.projectType}`);
+    navigate(`/${props.projectType}`);
   };
 
   return (

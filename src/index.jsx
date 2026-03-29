@@ -3,21 +3,17 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import HatPattern from './HatComponents/HatGenerator';
 import SockGenerator from './SockComponents/SockGenerator';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 
 const root = createRoot(document.getElementById('root'));
 root.render(
     <Router>
-        <Route exact path='/'>
-            <App />
-        </Route>
-        <Route path="/hat">
-            <HatPattern />
-        </Route>
-        <Route path="/socks">
-            <SockGenerator />
-        </Route>
+        <Routes>
+            <Route path='/' element={<App />} />
+            <Route path="/hat" element={<HatPattern />} />
+            <Route path="/socks" element={<SockGenerator />} />
+        </Routes>
     </Router>
 );
 
