@@ -89,7 +89,13 @@ function HatGenerator() {
           <HatForm
             onChange={handleChange}
             onSubmit={handleSubmit}
-            state={{ stsPerInch, rowsPerInch, circumference, height, fittedOrSlouchy, buttonText, submitted, valid, fullStCount, toTopButton }}
+            stsPerInch={stsPerInch}
+            rowsPerInch={rowsPerInch}
+            circumference={circumference}
+            height={height}
+            fittedOrSlouchy={fittedOrSlouchy}
+            buttonText={buttonText}
+            submitted={submitted}
           />
 
           {valid && (

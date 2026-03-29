@@ -21,7 +21,8 @@ function HatForm(props) {
                     name='stsPerInch' 
                     step='0.25' 
                     onChange={props.onChange}
-                    state={props.state}
+                    value={props.stsPerInch}
+                    submitted={props.submitted}
                 />
 
                 <NumberInput 
@@ -29,7 +30,8 @@ function HatForm(props) {
                     name='rowsPerInch' 
                     step='0.25' 
                     onChange={props.onChange} 
-                    state={props.state}
+                    value={props.rowsPerInch}
+                    submitted={props.submitted}
                 />
 
                 <div className="form-group">
@@ -37,7 +39,7 @@ function HatForm(props) {
                     <select id="height"
                         className="form-control"
                         name="height"
-                        value={props.state.height}
+                        value={props.height}
                         onChange={props.onChange}>
                         <option value="5.75">0-6 mo</option>
                         <option value="6.5">6-12 mo</option>
@@ -50,11 +52,12 @@ function HatForm(props) {
                 </div>
 
                 <NumberInput 
-                    label={`Circumference of head in inches (common numbers for your size: ${circsByHeight[props.state.height]}): `}
+                    label={`Circumference of head in inches (common numbers for your size: ${circsByHeight[props.height]}): `}
                     name='circumference' 
                     step='0.125' 
                     onChange={props.onChange} 
-                    state={props.state}
+                    value={props.circumference}
+                    submitted={props.submitted}
                 />
                     
 
@@ -63,7 +66,7 @@ function HatForm(props) {
                     <select id="fittedOrSlouchy"
                         className="form-control"
                         name="fittedOrSlouchy"
-                        value={props.state.fittedOrSlouchy}
+                        value={props.fittedOrSlouchy}
                         onChange={props.onChange}>
                         <option value="fitted">Fitted</option>
                         <option value="slouchy">Slouchy</option>
@@ -72,7 +75,7 @@ function HatForm(props) {
             </fieldset>
 
             <div>
-                <input className="btn btn-info" type="submit" value={props.state.buttonText} />
+                <input className="btn btn-info" type="submit" value={props.buttonText} />
             </div>
         </form>
     );
