@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import "@/app/ui/home/home.css";
-import Footer from "@/app/ui/footer";
-import HomeForm from "@/app/ui/home/form";
+import Footer from "@/app/ui/Footer";
+import HomeForm from "@/app/ui/home/HomeForm";
+import { PatternType } from "./types";
 
 function Home() {
-  const [projectType, setProjectType] = useState<"hat" | "socks">("hat");
+  const [projectType, setProjectType] = useState<PatternType>("hat");
 
   useEffect(() => {
     document.body.classList.add("home");
@@ -14,7 +15,7 @@ function Home() {
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setProjectType(e.currentTarget.value as "hat" | "socks");
+    setProjectType(e.currentTarget.value as PatternType);
   };
 
   return (
@@ -30,6 +31,7 @@ function Home() {
         <main>
           <HomeForm onChange={handleChange} projectType={projectType} />
           <Footer
+            isUnsplashPhoto
             photographer="Soraya García"
             url="https://unsplash.com/@sorayismo"
           />

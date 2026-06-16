@@ -2,12 +2,13 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
+import { PatternType } from "@/app/types";
 
 function HomeForm({
   projectType,
   onChange,
 }: {
-  projectType: "hat" | "socks";
+  projectType: PatternType;
   onChange: React.ChangeEventHandler<HTMLSelectElement, HTMLSelectElement>;
 }) {
   const router = useRouter();

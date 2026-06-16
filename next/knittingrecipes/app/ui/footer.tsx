@@ -1,6 +1,12 @@
-import React from "react";
-
-function Footer({ url, photographer }: { url: string; photographer: string }) {
+function Footer({
+  url,
+  photographer,
+  isUnsplashPhoto,
+}: {
+  url: string;
+  photographer: string;
+  isUnsplashPhoto: boolean;
+}) {
   return (
     <footer className="container border-top pt-5 mt-5">
       <p>
@@ -72,7 +78,7 @@ function Footer({ url, photographer }: { url: string; photographer: string }) {
         <a href="https://arbortwist.com">Check out my knitting patterns here</a>
         .
       </p>
-      {url && (
+      {isUnsplashPhoto ? (
         <p>
           Stock photo by{" "}
           <a href={url} target="_blank" rel="noopener noreferrer">
@@ -87,6 +93,14 @@ function Footer({ url, photographer }: { url: string; photographer: string }) {
             Unsplash
           </a>
           .
+        </p>
+      ) : (
+        <p>
+          Stock photo by{" "}
+          <a href={url} target="_blank" rel="noopener noreferrer">
+            {photographer}
+          </a>
+          {"."}
         </p>
       )}
     </footer>
