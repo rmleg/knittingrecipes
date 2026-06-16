@@ -1,0 +1,12 @@
+{
+  "app": {
+    "[project]/next/app/page": [
+      "static/media/07454f8ad8aaac57-s.p.2kjei9psvcorz.woff2",
+      "static/media/80bb744e92754df7-s.p.2eihtoujcoclr.woff2",
+      "static/media/bec5c09c262b1b7f-s.p.3axch3fp2h9wp.woff2"
+    ]
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}

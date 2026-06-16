@@ -1,0 +1,24 @@
+/* [project]/next/app/ui/home/home.css [app-client] (css) */
+body.home {
+  background-image: url("../media/homepage-yarn-bowl.0qgo2wn3vbm0i.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.container.home {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+.home main {
+  opacity: .9;
+  background-color: #fff;
+  width: 90%;
+  max-width: 500px;
+  padding: 3rem;
+}
+
+/*# sourceMappingURL=next_app_ui_home_home_1d-fdqq.css.map*/

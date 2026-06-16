@@ -25,7 +25,7 @@ function NumberInput({
         type="number"
         min="0"
         step={step}
-        placeholder={value.toString()}
+        placeholder={"0"}
         name={name}
         onChange={onChange}
       />

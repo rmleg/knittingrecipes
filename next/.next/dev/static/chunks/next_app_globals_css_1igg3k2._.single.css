@@ -1,0 +1,185 @@
+/* [project]/next/app/globals.css [app-client] (css) */
+:root {
+  --bg-white: #fefefe;
+  --bg-light: #eee;
+  --dark-green: #445c4f;
+  --light-bluegray: #d7dae5;
+  --pale-aqua: #b9cdda;
+  --robin-egg-blue: #a6d8d4;
+  --robin-egg-blue-dark: #397f78;
+  --robin-egg-blue-darkest: #24514e;
+  --dark-sea-green: #8eaf9d;
+  --bs-primary: var(--dark-green);
+  --bs-primary-rgb: 68, 92, 79;
+  --bs-secondary: var(--robin-egg-blue);
+  --bs-secondary-rgb: 166, 216, 212;
+  --bs-info: var(--light-bluegray);
+  --bs-info-rgb: 215, 218, 229;
+  --bs-light: var(--pale-aqua);
+  --bs-light-rgb: 185, 205, 218;
+  --bs-dark: var(--dark-sea-green);
+  --bs-dark-rgb: 142, 175, 157;
+  --bs-body-bg: var(--bg-white);
+  --bs-body-color: #212529;
+  --bs-link-color-rgb: 68, 92, 79;
+  --bs-link-hover-color-rgb: 57, 127, 120;
+  --bs-body-font-family: var(--font-nunito), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji";
+  --font-family-serif: var(--font-pt-serif), georgia, serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 400;
+  --bs-body-line-height: 1.5;
+  --paragraph-margin-bottom: 1rem;
+}
+
+::selection {
+  background-color: var(--bs-light);
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  font-family: var(--bs-body-font-family);
+  scroll-behavior: smooth;
+}
+
+.hide {
+  display: none;
+}
+
+.vertical-center {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+}
+
+.content-container {
+  background: var(--bg-white);
+  border-top-width: 5px !important;
+}
+
+h1, h2, h3, h4, h5, h6, legend {
+  font-family: var(--font-family-serif);
+}
+
+a {
+  border-bottom: 5px solid #0000;
+  line-height: 1.2em;
+  text-decoration: underline;
+  transition: all .15s;
+  display: inline-block;
+}
+
+a:hover {
+  border-bottom-color: var(--bs-secondary);
+  text-decoration: none;
+}
+
+.header h1 a {
+  color: var(--robin-egg-blue-dark);
+  border-bottom: none;
+  display: inline;
+}
+
+.invalid-feedback {
+  display: inline;
+}
+
+#to-top-btn {
+  z-index: 99;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+}
+
+.social a {
+  border-bottom: none;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
+
+legend span {
+  margin-top: 0;
+  margin-bottom: var(--paragraph-margin-bottom);
+  font-family: var(--bs-body-font-family);
+  font-size: var(--bs-body-font-size);
+  font-weight: var(--bs-body-font-weight);
+  line-height: var(--bs-body-line-height);
+  color: var(--bs-body-color);
+  text-align: left;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #3a4e43;
+  --bs-btn-hover-border-color: #3a4e43;
+  --bs-btn-active-bg: #364a3f;
+  --bs-btn-active-border-color: #364a3f;
+  --bs-btn-disabled-bg: var(--bs-primary);
+  --bs-btn-disabled-border-color: var(--bs-primary);
+  --bs-btn-focus-shadow-rgb: 68, 92, 79;
+}
+
+.btn-secondary {
+  --bs-btn-color: #000;
+  --bs-btn-bg: var(--bs-secondary);
+  --bs-btn-border-color: var(--bs-secondary);
+  --bs-btn-hover-bg: #8db8b4;
+  --bs-btn-hover-border-color: #8db8b4;
+  --bs-btn-active-bg: #85adaa;
+  --bs-btn-active-border-color: #85adaa;
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: var(--bs-secondary);
+  --bs-btn-disabled-border-color: var(--bs-secondary);
+  --bs-btn-focus-shadow-rgb: 166, 216, 212;
+}
+
+.btn-info {
+  --bs-btn-color: #000;
+  --bs-btn-bg: var(--bs-info);
+  --bs-btn-border-color: var(--bs-info);
+  --bs-btn-hover-bg: #b7b9c3;
+  --bs-btn-hover-border-color: #b7b9c3;
+  --bs-btn-active-bg: #acaeb7;
+  --bs-btn-active-border-color: #acaeb7;
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: var(--bs-info);
+  --bs-btn-disabled-border-color: var(--bs-info);
+  --bs-btn-focus-shadow-rgb: 215, 218, 229;
+}
+
+.btn-light {
+  --bs-btn-color: #000;
+  --bs-btn-bg: var(--bs-light);
+  --bs-btn-border-color: var(--bs-light);
+  --bs-btn-hover-bg: #9daeb9;
+  --bs-btn-hover-border-color: #9daeb9;
+  --bs-btn-active-bg: #94a4ae;
+  --bs-btn-active-border-color: #94a4ae;
+  --bs-btn-disabled-color: #000;
+  --bs-btn-disabled-bg: var(--bs-light);
+  --bs-btn-disabled-border-color: var(--bs-light);
+  --bs-btn-focus-shadow-rgb: 185, 205, 218;
+}
+
+.btn-dark {
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
+  --bs-btn-hover-bg: #799585;
+  --bs-btn-hover-border-color: #799585;
+  --bs-btn-active-bg: #728c7e;
+  --bs-btn-active-border-color: #728c7e;
+  --bs-btn-disabled-bg: var(--bs-dark);
+  --bs-btn-disabled-border-color: var(--bs-dark);
+  --bs-btn-focus-shadow-rgb: 142, 175, 157;
+}
+
+/*# sourceMappingURL=next_app_globals_css_1igg3k2._.single.css.map*/
