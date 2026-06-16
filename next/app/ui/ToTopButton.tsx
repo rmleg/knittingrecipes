@@ -1,5 +1,3 @@
-import React from "react";
-
 function ToTopButton({ onClick }: { onClick: React.MouseEventHandler }) {
   return (
     <button
