@@ -1,3 +1,5 @@
+import { throttle } from "lodash";
+
 export const scrollToForm = () => {
   // e.preventDefault();
   const form = document.querySelector("form");
@@ -32,4 +34,18 @@ export const getMultiple = (num: number, mult: number) => {
     }
   }
   return 0;
+};
+
+export const throttledScrollWithToTopButton = (
+  setToTopButton: (value: React.SetStateAction<boolean>) => void,
+) => {
+  const throttled = throttle(() => {
+    const form = document.querySelector("form");
+    if (form?.offsetTop !== undefined && form?.offsetHeight !== undefined) {
+      const formHeight = form?.offsetTop + form?.offsetHeight;
+      setToTopButton(window.scrollY >= formHeight);
+    }
+  }, 100);
+  window.addEventListener("scroll", throttled);
+  return () => window.removeEventListener("scroll", throttled);
 };
