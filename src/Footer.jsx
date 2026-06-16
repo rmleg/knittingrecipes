@@ -70,10 +70,6 @@ function Footer(props) {
       </p>
       <p>
         <a href="https://arbortwist.com">Check out my knitting patterns here</a>
-        , or{" "}
-        <a href="https://startdesigningtoday.com">
-          learn to design your own knitting patterns here
-        </a>
         .
       </p>
       {props.url && (
