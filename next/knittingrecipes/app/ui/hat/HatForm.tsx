@@ -57,10 +57,10 @@ function HatForm({
 
         <div className="mb-3">
           <label htmlFor="height">Size:</label>
-          <select
-            id="height"
-            className="form-control"
-            name="height"
+            <select
+              id="height"
+              className="form-select"
+              name="height"
             value={height}
             onChange={onChange}
           >
@@ -85,10 +85,10 @@ function HatForm({
 
         <div className="mb-3">
           <label htmlFor="fittedOrSlouchy">Fitted or slouchy?</label>
-          <select
-            id="fittedOrSlouchy"
-            className="form-control"
-            name="fittedOrSlouchy"
+            <select
+              id="fittedOrSlouchy"
+              className="form-select"
+              name="fittedOrSlouchy"
             value={fittedOrSlouchy}
             onChange={onChange}
           >
