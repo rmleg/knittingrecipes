@@ -57,7 +57,7 @@ function SockForm({
           </fieldset>
         </div>
         <div className="col-md">
-          <fieldset id="constr-direction" className="form-group">
+          <fieldset id="constr-direction" className="mb-3">
             <legend>
               Construction Direction
               <br />
@@ -103,7 +103,7 @@ function SockForm({
           </fieldset>
           {/* only show heel choices if direction is cuff down */}
           {direction === "cuffdown" && (
-            <fieldset id="heel-type" className="form-group">
+            <fieldset id="heel-type" className="mb-3">
               <legend>
                 Heel Type
                 <br />

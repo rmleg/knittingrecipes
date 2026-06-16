@@ -17,7 +17,7 @@ function NumberInput({
 }) {
   const invalid = Boolean(submitted) && Number(value) <= 0;
   return (
-    <div className="form-group">
+    <div className="mb-3">
       <label htmlFor={name}>{label}</label>
       <input
         id={name}

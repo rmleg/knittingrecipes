@@ -55,7 +55,7 @@ function HatForm({
           submitted={submitted}
         />
 
-        <div className="form-group">
+        <div className="mb-3">
           <label htmlFor="height">Size:</label>
           <select
             id="height"
@@ -83,7 +83,7 @@ function HatForm({
           submitted={submitted}
         />
 
-        <div className="form-group">
+        <div className="mb-3">
           <label htmlFor="fittedOrSlouchy">Fitted or slouchy?</label>
           <select
             id="fittedOrSlouchy"
